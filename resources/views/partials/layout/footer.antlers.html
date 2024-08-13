@@ -1,0 +1,30 @@
+<footer class="pb-10 md:pb-20 text-xxs md:text-xs">
+  {{ partial:layout/grid }}
+    {{ partial:layout/span class="mb-5 md:mb-0 md:!col-span-1" }}
+      <a 
+        href="/impressum"
+        title="Impressum"
+        class="no-underline hover:underline underline-offset-4 decoration-1 decoration-gray-400">
+        Impressum
+      </a>
+    {{ /partial:layout/span }}
+
+    {{ partial:layout/span class="mb-5 md:mb-0 md:!col-span-2" }}
+      <a 
+        href="/datenschutz"
+        title="Datenschutz"
+        class="no-underline hover:underline underline-offset-4 decoration-1 decoration-gray-400">
+        Datenschutz
+      </a>
+    {{ /partial:layout/span }}
+
+    {{ partial:layout/span }}
+      &copy; {{ now | format('Y') }} atelier schelb+partner ag
+    {{ /partial:layout/span }}
+
+  {{ /partial:layout/grid }}
+</footer>
+{{ vite src="resources/js/app.js" }}
+{{ livewire:scripts }}
+</body>
+</html>
