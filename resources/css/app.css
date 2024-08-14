@@ -63,3 +63,9 @@ body.privacy main li:before {
 
 body.privacy main a {
 }
+
+
+/* Tests */
+.headline {
+  @apply flex text-3xl leading-none font-bold text-yellow-300 relative before:block before:absolute before:w-full before:h-5 before:content-[''] before:left-0 after:block after:absolute after:w-auto after:h-5 after:content-[''] after:left-0 before:bg-yellow-300 after:bg-yellow-300;
+}

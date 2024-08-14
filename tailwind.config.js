@@ -16,32 +16,41 @@ export default {
 
       screens: {
         'xs': '480px',
+        '3xl': '1800px',
       },
 
       maxWidth: {
-        '8xl': '1440px',
+        // '8xl': '1440px',
       },
 
       fontFamily: {
-        'gt-light': ['GTAmericaULt', ...defaultTheme.fontFamily.sans],
-        'gt-light-italic': ['GTAmericaULtIt', ...defaultTheme.fontFamily.sans],
+        // 'gt-light': ['GTAmericaULt', ...defaultTheme.fontFamily.sans],
+        // 'gt-light-italic': ['GTAmericaULtIt', ...defaultTheme.fontFamily.sans],
       },
 
       colors: {
-        'iron': '#666666'
+        'amber': '#F9AF00',
+        'lime': '#CED36D',
+        'vanilla': '#F7F7D2',
+        'steel': '#808B8F',
+        'lemon': '#DEDF15',
+        'olive': '#C4C613',
+        'sky': '#AADDF6',
+        'honey': '#FDDE99',
+        'ice': '#DEF2FC',
       },
 
       fontSize: {
-        'xxs': '0.875rem',    // 14px
-        'xs': '1rem',         // 16px
-        'sm': '1.125rem',     // 18px
-        'base': '1.375rem',   // 22px
-        'md': '1.625rem',     // 26px
-        'lg': '2.1875rem',    // 35px
-        'xl': '2.5rem',       // 40px
-        '2xl': '3.125rem',     // 50px
-        '3xl': '5rem',        // 80px
-        '4xl': '6.25rem',     // 100px
+        // 'xxs': '0.875rem',    // 14px
+        // 'xs': '1rem',         // 16px
+        // 'sm': '1.125rem',     // 18px
+        // 'base': '1.375rem',   // 22px
+        // 'md': '1.625rem',     // 26px
+        // 'lg': '2.1875rem',    // 35px
+        // 'xl': '2.5rem',       // 40px
+        // '2xl': '3.125rem',     // 50px
+        // '3xl': '5rem',        // 80px
+        // '4xl': '6.25rem',     // 100px
       },
       
       zIndex: {
