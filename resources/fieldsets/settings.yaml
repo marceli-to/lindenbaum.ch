@@ -1,6 +1,24 @@
 title: Settings
 fields:
   -
+    handle: page_area
+    field:
+      options:
+        general: Allgemein
+        laundry: Wäscherei
+        nursery: Chinderhuus
+      default: general
+      type: select
+      display: Bereich
+  -
+    handle: page_class
+    field:
+      options:
+        privacy: Datenschutz
+        imprint: Impressum
+      type: select
+      display: 'Seiten CSS-Klasse'
+  -
     handle: debug
     field:
       type: toggle
@@ -15,11 +33,3 @@ fields:
     field:
       type: template
       display: Layout
-  -
-    handle: page_class
-    field:
-      options:
-        privacy: Datenschutz
-        imprint: Impressum
-      type: select
-      display: 'Seiten CSS-Klasse'

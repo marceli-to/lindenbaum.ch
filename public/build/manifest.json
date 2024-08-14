@@ -1,24 +1,8 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-eb7b341f.css",
+    "file": "assets/app-57db2b72.css",
     "isEntry": true,
     "src": "resources/css/app.css"
-  },
-  "resources/css/fonts/GT-America-Standard-Ultra-Light-Italic.woff": {
-    "file": "assets/GT-America-Standard-Ultra-Light-Italic-918a81c7.woff",
-    "src": "resources/css/fonts/GT-America-Standard-Ultra-Light-Italic.woff"
-  },
-  "resources/css/fonts/GT-America-Standard-Ultra-Light-Italic.woff2": {
-    "file": "assets/GT-America-Standard-Ultra-Light-Italic-edc52ee6.woff2",
-    "src": "resources/css/fonts/GT-America-Standard-Ultra-Light-Italic.woff2"
-  },
-  "resources/css/fonts/GT-America-Standard-Ultra-Light.woff": {
-    "file": "assets/GT-America-Standard-Ultra-Light-3db1679c.woff",
-    "src": "resources/css/fonts/GT-America-Standard-Ultra-Light.woff"
-  },
-  "resources/css/fonts/GT-America-Standard-Ultra-Light.woff2": {
-    "file": "assets/GT-America-Standard-Ultra-Light-bb355d8f.woff2",
-    "src": "resources/css/fonts/GT-America-Standard-Ultra-Light.woff2"
   },
   "resources/js/app.js": {
     "file": "assets/app-350ff511.js",

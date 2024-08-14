@@ -24,8 +24,8 @@ export default {
       },
 
       fontFamily: {
-        // 'gt-light': ['GTAmericaULt', ...defaultTheme.fontFamily.sans],
-        // 'gt-light-italic': ['GTAmericaULtIt', ...defaultTheme.fontFamily.sans],
+        'roboto-condensed-regular': ['Roboto Condensed', ...defaultTheme.fontFamily.sans],
+        'roboto-condensed-bold': ['Roboto Condensed', ...defaultTheme.fontFamily.sans],
       },
 
       colors: {

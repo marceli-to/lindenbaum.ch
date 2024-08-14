@@ -41,9 +41,9 @@ return [
         // 'getting_started',
         [ 
           'type' => 'collection',
-          'collection' => 'projects',
+          'collection' => 'pages',
           'limit' => 5,
-          'title' => 'Projekte',
+          'title' => 'Seiten',
           'width' => 50,
           'sort' => 'order',
         ], 
