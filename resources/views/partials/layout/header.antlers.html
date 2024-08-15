@@ -1,10 +1,23 @@
-<header class="relative">
-    {{# {{ partial:menu/button }}
-    {{ partial:menu/wrapper }} #}}
-    {{# <a 
+{{# desktop header  #}}
+<header class="relative hidden md:block">
+    {{ partial:menu/wrapper }}
+    <a 
       href="/" 
       title="Startseite"
       class="">
-      {{ partial:icons/logo class="w-200 h-auto" }}
-    </a> #}}
+      {{ partial:icons/logo/wrapper class="w-200 h-auto" }}
+    </a>
+</header>
+{{# mobile header  #}}
+<header class="sticky top-0 bg-red-200 w-full h-133 pt-30 px-20 z-100 md:hidden">
+  <div class="relative">
+    <a 
+      href="/" 
+      title="Startseite"
+      class="">
+      {{ partial:icons/logo/wrapper class="w-200 h-auto" }}
+    </a>
+    {{ partial:menu/mobile/button }}
+    {{ partial:menu/mobile/wrapper }}
+  </div>
 </header>

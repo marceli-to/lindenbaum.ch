@@ -1,0 +1,86 @@
+<div 
+  x-cloak 
+  x-show="menu"
+  x-transition:enter="transition ease-in duration-100"
+  x-transition:enter-start="opacity-0"
+  x-transition:enter-end="opacity-100"
+  x-transition:leave="transition ease-in duration-0"
+  x-transition:leave-start="opacity-100"
+  x-transition:leave-end="opacity-0"
+  class="bg-steel text-xs text-lemon uppercase fixed top-0 left-0 w-full h-dvh overflow-y-auto">
+  <nav class="pt-70 pb-45 min-h-dvh w-full flex flex-col justify-between">
+    <ul class="flex flex-col items-center space-y-10">
+      {{ nav:main }}
+        {{ partial:menu/mobile/item }}
+      {{ /nav:main }}
+    </ul>
+    <ul class="flex flex-col items-center pt-12">
+      {{ if contact_information:email }}
+        <li>
+            <a 
+              href="mailto:{{ contact_information:email }}" 
+              title="{{ "Schreiben Sie uns eine E-Mail" | trans }}"
+              class="block py-3 hover:underline underline-offset-2 decoration-1">
+              {{ contact_information:email }}
+            </a>
+          </li>
+        {{ /if }}
+
+        {{ if contact_information:phone }}
+          <li>
+            <a 
+              href="tel:{{ contact_information:phone }}" 
+              title="{{ "Rufen Sie uns an" | trans }}"
+              class="block py-3 hover:underline underline-offset-2 decoration-1">
+              {{ contact_information:phone }}
+            </a>
+          </li>
+        {{ /if }}
+
+      {{ if social_media_accounts:instagram || social_media_accounts:facebook || social_media_accounts:linkedin  || social_media_accounts:youtube }}
+        <li class="flex space-x-12 mt-20">
+          {{ if social_media_accounts:instagram }}
+            <a 
+              href="{{ social_media_accounts:instagram }}" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              title="Lindenbaum auf Instagram">
+              {{ partial:icons/social/instagram class="block w-auto h-28 transition-all hover:text-cloud" fill="#808B8F" }}
+            </a>
+          {{ /if }}
+
+          {{ if social_media_accounts:facebook }}
+            <a 
+              href="{{ social_media_accounts:facebook }}" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              title="Lindenbaum auf Instagram">
+              {{ partial:icons/social/facebook class="block w-auto h-28 transition-all hover:text-cloud" fill="#808B8F" }}
+            </a>
+          {{ /if }}
+
+          {{ if social_media_accounts:linkedin }}
+            <a 
+              href="{{ social_media_accounts:linkedin }}" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              title="Lindenbaum auf Instagram">
+              {{ partial:icons/social/linkedin class="block w-auto h-28 transition-all hover:text-cloud" fill="#808B8F" }}
+            </a>
+          {{ /if }}
+
+          {{ if social_media_accounts:youtube }}
+            <a 
+              href="{{ social_media_accounts:youtube }}" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              title="Lindenbaum auf Instagram">
+              {{ partial:icons/social/youtube class="block w-auto h-28 transition-all hover:text-cloud" fill="#808B8F" }}
+            </a>
+          {{ /if }}
+          </li>  
+      {{ /if }}
+
+    </ul>
+  </nav>
+</div>

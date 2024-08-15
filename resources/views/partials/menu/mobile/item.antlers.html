@@ -1,0 +1,33 @@
+<li 
+  x-data="{ uuid: '{{ id }}' }">
+  <a 
+    {{ if children }}
+      href="javascript:;" 
+      x-on:click="submenu = submenu === uuid ? null : uuid"
+    {{ else }}
+      href="{{ url }}"
+    {{ /if }}
+    class="{{ children ? 'flex justify-center items-center' : 'block' }} py-10 font-bold text-center  {{ is_current || is_parent ? '' : '' }}"
+    target="{{ is_external ? '_blank' : '_self' }}"
+    title="{{ title }}">
+    {{ title }}
+    {{ if children }}
+      <span x-show="submenu !== uuid" class="ml-5">
+        {{ partial:icons/chevron-down }}
+      </span>
+      <span x-show="submenu === uuid" class="ml-5">
+        {{ partial:icons/chevron-up }}
+      </span>
+    {{ /if }}
+  </a>
+  {{ if children }}
+      <ul 
+        class="flex flex-col items-center font-regular {{ is_current || is_parent ? '' : '' }}" 
+        :class="{ 'mb-10': submenu === uuid }"
+        x-show="submenu === uuid">
+        {{ children }}
+          {{ partial:menu/mobile/item-child }}
+        {{ /children }}
+      </ul>
+  {{ /if }}
+</li>

@@ -19,10 +19,6 @@ export default {
         '3xl': '1800px',
       },
 
-      maxWidth: {
-        // '8xl': '1440px',
-      },
-
       fontFamily: {
         'roboto-condensed-regular': ['Roboto Condensed', ...defaultTheme.fontFamily.sans],
         'roboto-condensed-bold': ['Roboto Condensed', ...defaultTheme.fontFamily.sans],
@@ -38,20 +34,18 @@ export default {
         'sky': '#AADDF6',
         'honey': '#FDDE99',
         'ice': '#DEF2FC',
-        'light-grey': '#ccc',
+        'cloud': '#CCCCCC',
       },
 
       fontSize: {
-        // 'xxs': '0.875rem',    // 14px
-        // 'xs': '1rem',         // 16px
-        // 'sm': '1.125rem',     // 18px
-        // 'base': '1.375rem',   // 22px
-        // 'md': '1.625rem',     // 26px
-        // 'lg': '2.1875rem',    // 35px
-        // 'xl': '2.5rem',       // 40px
-        // '2xl': '3.125rem',     // 50px
-        // '3xl': '5rem',        // 80px
-        // '4xl': '6.25rem',     // 100px
+        'xs': '0.9375rem', // 15px
+        'sm': '1.0625rem', // 17px
+        'md': '1.125rem', // 18px
+        'lg': '1.25rem', // 20px
+        'xl': '1.3125rem', // 21px
+        '2xl': '1.5625rem', // 25px
+        '3xl': '1.875rem', // 32px
+        '4xl': '2.5rem', // 52px
       },
       
       zIndex: {
@@ -60,6 +54,8 @@ export default {
         '80': 80,
         '90': 90,
         '100': 100,
+        '150': 150,
+        '200': 200,
       },
     },
 
