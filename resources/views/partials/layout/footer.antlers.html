@@ -1,16 +1,107 @@
 <footer>
-  <a 
-    href="/impressum"
-    title="Impressum"
-    class="">
-    Impressum
-  </a>
-  <a 
-    href="/datenschutz"
-    title="Datenschutz"
-    class="">
-    Datenschutz
-  </a>
+  {{ partial:layout/inner class="p-25 md:p-40 w-full md:grid md:grid-cols-12 md:gap-x-0 lg:items-end" }}
+
+    <div class="md:col-span-8 lg:flex lg:items-end">
+      {{ if contact_information:address }}
+        <address class="block not-italic md:mr-30 lg:mr-50">
+          {{ contact_information:address | nl2br }}
+        </address>
+      {{ /if }}
+
+      {{ if contact_information:email || contact_information:phone }}
+        <div class="mt-25 md:mr-30 lg:mr-50">
+          {{ if contact_information:email }}
+            <a 
+              href="mailto:{{ contact_information:email }}" 
+              title="{{ "Schreiben Sie uns eine E-Mail" | trans }}"
+              class="block hover:underline underline-offset-2 decoration-1">
+              {{ contact_information:email }}
+            </a>
+          {{ /if }}
+
+          {{ if contact_information:phone }}
+            <a 
+              href="tel:{{ contact_information:phone }}" 
+              title="{{ "Rufen Sie uns an" | trans }}"
+              class="block hover:underline underline-offset-2 decoration-1">
+              {{ contact_information:phone }}
+            </a>
+          {{ /if }}
+        </div>
+      {{ /if }}
+
+      {{ if social_media_accounts:instagram || social_media_accounts:facebook || social_media_accounts:linkedin  || social_media_accounts:youtube }}
+        <div class="mt-25 flex space-x-16 md:space-x-8 lg:space-x-16">
+          {{ if social_media_accounts:instagram }}
+            <a 
+              href="{{ social_media_accounts:instagram }}" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              title="Lindenbaum auf Instagram">
+              {{ partial:icons/instagram class="block w-auto h-28 transition-all hover:text-light-grey" }}
+            </a>
+          {{ /if }}
+
+          {{ if social_media_accounts:facebook }}
+            <a 
+              href="{{ social_media_accounts:facebook }}" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              title="Lindenbaum auf Instagram">
+              {{ partial:icons/facebook class="block w-auto h-28 transition-all hover:text-light-grey" }}
+            </a>
+          {{ /if }}
+
+          {{ if social_media_accounts:linkedin }}
+            <a 
+              href="{{ social_media_accounts:linkedin }}" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              title="Lindenbaum auf Instagram">
+              {{ partial:icons/linkedin class="block w-auto h-28 transition-all hover:text-light-grey" }}
+            </a>
+          {{ /if }}
+
+          {{ if social_media_accounts:youtube }}
+            <a 
+              href="{{ social_media_accounts:youtube }}" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              title="Lindenbaum auf Instagram">
+              {{ partial:icons/youtube class="block w-auto h-28 transition-all hover:text-light-grey" }}
+            </a>
+          {{ /if }}
+        </div>  
+      {{ /if }}
+    </div>
+
+    <div class="mt-50 md:mt-0 md:col-span-4 md:flex md:flex-col md:items-end">
+      <a 
+        href="/impressum"
+        title="Impressum"
+        target="_blank"
+        class="block font-bold hover:underline underline-offset-2 decoration-1">
+        Impressum
+      </a>
+      <a 
+        href="/datenschutz"
+        title="Datenschutz"
+        target="_blank"
+        class="block font-bold hover:underline underline-offset-2 decoration-1">
+        Datenschutz
+      </a>
+      <a 
+        href="https://stoz.ch"
+        title="design by stoz"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block font-bold hover:underline underline-offset-2 decoration-1">
+        design by stoz
+      </a>
+    </div>
+
+  {{ /partial:layout/inner }}
+
 </footer>
 {{ vite src="resources/js/app.js" }}
 {{ livewire:scripts }}

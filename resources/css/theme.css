@@ -1,0 +1,11 @@
+.theme-general footer {
+  @apply bg-vanilla;
+}
+
+.theme-laundry footer {
+  @apply bg-ice;
+}
+
+.theme-nursery footer {
+  @apply bg-honey;
+}

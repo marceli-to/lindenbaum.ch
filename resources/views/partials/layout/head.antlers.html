@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ site:short_locale }}" class="scroll-smooth overflow-y-scroll">
+<html lang="{{ site:short_locale }}" class="scroll-smooth overflow-y-scroll {{ page_class ?? '' }} theme-{{ page_theme }}">
 <head>
 <meta charset="utf-8">
 {{ if is_homepage }}<title>Lindenbaum - Ausbildung und Wohnen in Pf&auml;ffikon ZH</title>{{ else }}<title>{{ open_graph_title ?? title ?? site:name }} | Lindenbaum - Ausbildung und Wohnen in Pf&auml;ffikon ZH</title>{{ endif }}

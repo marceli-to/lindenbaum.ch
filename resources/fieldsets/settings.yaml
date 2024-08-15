@@ -1,7 +1,7 @@
 title: Settings
 fields:
   -
-    handle: page_area
+    handle: page_theme
     field:
       options:
         general: Allgemein
@@ -14,8 +14,8 @@ fields:
     handle: page_class
     field:
       options:
-        privacy: Datenschutz
-        imprint: Impressum
+        page-privacy: Datenschutz
+        page-imprint: Impressum
       type: select
       display: 'Seiten CSS-Klasse'
   -

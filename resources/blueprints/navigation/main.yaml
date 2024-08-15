@@ -2,18 +2,4 @@ tabs:
   main:
     display: Main
     sections:
-      -
-        fields:
-          -
-            handle: sort
-            field:
-              options:
-                pos-1: '1'
-                pos-2: '2'
-                pos-3: '3'
-                pos-4: '4'
-                pos-5: '5'
-                pos-6: '6'
-              type: select
-              display: Sortierung
-              instructions: 'Sortierung ab grösse Desktop'
+      - {  }

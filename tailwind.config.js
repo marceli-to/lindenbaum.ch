@@ -38,6 +38,7 @@ export default {
         'sky': '#AADDF6',
         'honey': '#FDDE99',
         'ice': '#DEF2FC',
+        'light-grey': '#ccc',
       },
 
       fontSize: {
