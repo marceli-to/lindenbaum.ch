@@ -3,7 +3,7 @@ href="javascript:;"
 x-on:click="menu = ! menu" 
 title="Menü anzeigen"
 :class="{ 'is-active': menu === true }"
-class="absolute top-0 right-0 z-150 group w-23 h-14">
+class="fixed top-30 right-20 z-150 group w-23 h-14">
 <span x-show="menu === false">
   {{ partial:icons/menu/burger class="w-23 h-auto" }}
 </span>

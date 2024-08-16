@@ -1,19 +1,19 @@
 <div 
   data-accordion-index="{{ index }}" 
-  class="accordeon-item relative mb-15">
+  class="accordeon-item relative mb-15 scroll-mt-40">
   <button 
     type="button" 
     class=" w-full pb-15 text-left"
     @click="selected !== {{ index }} ? selected = {{ index }} : selected = null; setTimeout(() => { document.querySelector('[data-accordion-index=\'{{ index }}\']').scrollIntoView()}, 15);">
-    <div class="flex items-center justify-between pr-10 lg:pr-15">
+    <div class="flex items-center justify-between pr-0 lg:pr-15">
       <h3 class="uppercase">
         {{ title }}
       </h3>
       <template x-if="selected !== {{ index }}">
-        {{ partial:icons/chevron-down class="accordeon-chevron lg:w-18 lg:h-auto shrink-0" }}
+        {{ partial:icons/chevron-down class="accordeon-chevron w-16 lg:w-18 h-auto shrink-0" }}
       </template>
       <template x-if="selected === {{ index }}">
-        {{ partial:icons/chevron-up class="accordeon-chevron lg:w-18 lg:h-auto shrink-0" }}
+        {{ partial:icons/chevron-up class="accordeon-chevron w-16 lg:w-18 h-auto shrink-0" }}
       </template>
     </div>
   </button>
