@@ -1,0 +1,23 @@
+title: Intro
+fields:
+  -
+    handle: title
+    field:
+      type: replicator
+      display: Titel
+      instructions: 'Ein- oder mehrzeiliger Titel'
+      sets:
+        neue_set-gruppe:
+          display: 'Neue Set-Gruppe'
+          sets:
+            title_line:
+              display: Zeile
+              icon: text-formatting-initial-letter
+              fields:
+                -
+                  handle: title_line
+                  field:
+                    type: text
+                    display: Zeile
+  -
+    import: editor

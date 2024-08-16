@@ -40,6 +40,13 @@ tabs:
                       fields:
                         -
                           import: header_visual
+                    intro:
+                      display: Intro
+                      instructions: 'Seitenintro mit Titel und optionalem Text'
+                      icon: text-formatting-initial-letter
+                      fields:
+                        -
+                          import: intro
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack

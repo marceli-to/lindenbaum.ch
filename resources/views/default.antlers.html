@@ -1,22 +1,22 @@
 {{ if header_image }}
-<div class="relative">
-  {{ partial:components/media/header_visual }}
-  {{ if shortcut_jobs }}
-    {{ partial:components/misc/shortcut_jobs class="translate-y-1/2" }}
-  {{ /if }}
-  {{ if shortcut_menu }}
-    {{ partial:components/misc/shortcut_menu class="translate-y-1/2" }}
-  {{ /if }}
-</div>
+  <div class="relative">
+    {{ partial:components/media/header_visual }}
+    {{ if shortcut_jobs }}
+      {{ partial:components/misc/shortcut_jobs class="translate-y-1/2" }}
+    {{ /if }}
+    {{ if shortcut_menu }}
+      {{ partial:components/misc/shortcut_menu class="translate-y-1/2" }}
+    {{ /if }}
+  </div>
 {{ else }}
-<div class="absolute top-100 right-0 bg-red-100">
-  {{ if shortcut_jobs }}
-    {{ partial:components/misc/shortcut_jobs }}
-  {{ /if }}
-  {{ if shortcut_menu }}
-    {{ partial:components/misc/shortcut_menu }}
-  {{ /if }}
-</div>
+  <div class="absolute top-100 right-0 bg-red-100">
+    {{ if shortcut_jobs }}
+      {{ partial:components/misc/shortcut_jobs }}
+    {{ /if }}
+    {{ if shortcut_menu }}
+      {{ partial:components/misc/shortcut_menu }}
+    {{ /if }}
+  </div>
 {{ /if }}
 
 {{ page_elements }}
