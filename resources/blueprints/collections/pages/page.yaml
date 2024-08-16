@@ -58,6 +58,22 @@ tabs:
                       fields:
                         -
                           import: job_listing
+                    benefits:
+                      display: Benefits
+                      instructions: 'Liste der Benefits'
+                      icon: text-formatting-image-top
+                      fields:
+                        -
+                          import: benefits
+  media:
+    display: Medien
+    sections:
+      -
+        display: Headerbild
+        instructions: 'Headerbild hinzufügen'
+        fields:
+          -
+            import: header_visual
   seo:
     display: SEO
     sections:

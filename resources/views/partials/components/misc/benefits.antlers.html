@@ -1,0 +1,15 @@
+<section class="bg-lemon py-30 lg:py-50">
+  <div class="px-25 xl:px-40 max-w-6xl mx-auto grid grid-cols-12 lg:grid-cols-10 gap-20">
+    {{ benefit }}
+      <div class="col-span-6 md:col-span-4 lg:col-span-2">
+        <figure class="mb-10 relative group aspect-square">
+          <img src="{{ illustration:url }}" width="400" height="400" alt="{{ illustration:alt }}" class="w-full h-auto aspect-square object-cover">
+          <figcaption class="absolute inset-0 z-10 opacity-0 flex items-center grow-0 justify-center text-center text-xs p-20 bg-vanilla group-hover:opacity-100 transition-opacity">
+            {{ text }}
+          </figcaption>
+        </figure>
+        <h3 class="text-center uppercase">{{ title }}</h3>
+      </div>
+    {{ /benefit }}
+  </div>
+</section>

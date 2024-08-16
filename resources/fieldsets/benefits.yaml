@@ -1,0 +1,39 @@
+title: Benefits
+fields:
+  -
+    handle: benefit
+    field:
+      type: replicator
+      display: Benefit
+      sets:
+        benefit:
+          display: Benefit
+          instructions: 'Benefit hinzufügen'
+          icon: text-formatting-image-top
+          sets:
+            title:
+              display: Titel
+              icon: text-formatting-all-caps
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Titel
+                    validate:
+                      - required
+                -
+                  handle: text
+                  field:
+                    type: textarea
+                    display: Text
+                -
+                  handle: illustration
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Illustration
+                    folder: illustrationen
+                    validate:
+                      - required

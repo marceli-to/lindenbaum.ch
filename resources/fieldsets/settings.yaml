@@ -1,6 +1,20 @@
 title: Settings
 fields:
   -
+    handle: shortcut_menu
+    field:
+      default: true
+      type: toggle
+      display: 'Shortcut "Menü"'
+      width: 50
+  -
+    handle: shortcut_jobs
+    field:
+      default: true
+      type: toggle
+      display: 'Shortcut "Jobs"'
+      width: 50
+  -
     handle: page_theme
     field:
       options:
@@ -10,6 +24,7 @@ fields:
       default: general
       type: select
       display: Bereich
+      width: 50
   -
     handle: page_class
     field:
@@ -18,6 +33,7 @@ fields:
         page-imprint: Impressum
       type: select
       display: 'Seiten CSS-Klasse'
+      width: 50
   -
     handle: debug
     field:
