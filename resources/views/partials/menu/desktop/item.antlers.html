@@ -1,13 +1,13 @@
 <li class="relative {{ children ? 'group' : '' }} w-full">
   <a 
     href="{{ url }}" 
-    class="block font-bold group-hover:text-lemon {{ children ? 'group-hover:bg-steel' : '' }} relative z-10 px-10 {{ is_current || is_parent ? '' : '' }} {{ class }}"
+    class="block font-bold {{ children ? 'group-hover:bg-steel' : '' }} hover:text-lemon group-hover:text-lemon relative z-10 px-10 text-center {{ is_current || is_parent ? 'is-active' : '' }} {{ class }}"
     target="{{ is_external ? '_blank' : '_self' }}"
     title="{{ title }}">
     {{ title }}
   </a>
   {{ if children }}
-    <ul class="absolute bg-steel w-full min-w-[120px] invisible group-hover:visible left-0 opacity-0 -z-1 group-hover:py-20 group-hover:pt-50 group-hover:-top-15 space-y-15 group-hover:opacity-100 hyphens-auto">
+    <ul class="absolute bg-steel w-full min-w-[120px] invisible group-hover:visible left-0 opacity-0 -z-1 group-hover:text-lemon group-hover:py-20 group-hover:pt-50 group-hover:-top-15 space-y-15 group-hover:opacity-100 hyphens-auto">
       {{ children }}
         {{ partial:menu/desktop/item-child }}
       {{ /children }}

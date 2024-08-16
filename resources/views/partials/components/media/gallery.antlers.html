@@ -1,0 +1,20 @@
+{{ if title}}
+<h2>{{ title }}</h2>
+{{ /if }}
+
+{{ if images }}
+  <div class="sm:grid sm:grid-cols-12 sm:gap-20">
+    {{ images }}
+      <a 
+        href="{{ image:url }}" 
+        class="block mb-20 sm:mb-0 sm:col-span-4 md:col-span-3 lg:col-span-2"
+        data-fancybox="gallery" 
+        data-caption="{{ image:alt }}">
+        {{ partial:components/media/image 
+          :image="image" 
+          class="w-full h-auto object-cover"
+          preset="focal-square" }}
+      </a>
+    {{ /images}}
+  </div>
+{{ /if}}

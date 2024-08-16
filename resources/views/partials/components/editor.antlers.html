@@ -1,35 +1,14 @@
-{{ partial:layout/article }}
+{{ editor }}
 
-  {{ if type == 'text_columns' }}
+  {{ if type == 'button' }}
 
-    {{ partial:layout/grid class="text-container" }}
-
-      {{ partial:layout/span class="mb-20 md:mb-0 hyphens-auto" }}
-        {{ text_left }}
-      {{ /partial:layout/span }}
-
-      {{ partial:layout/span }}
-        {{ text_right }}
-
-          {{ if type == 'text' }}
-            {{ text }}
-          {{ /if }}
-        
-          {{ if type == 'list_item' }}
-            {{ partial:components/elements/text/list_item class="mb-10 md:mb-25 last-of-type:mb-0" }}
-              {{ text }}
-            {{ /partial:components/elements/text/list_item }}
-          {{ /if }}
-          
-        {{ /text_right }}
-      {{ /partial:layout/span }}
-
-    {{ /partial:layout/grid }}
+    {{ partial:components/buttons/primary type="outline" }}
 
   {{ else }}
 
     {{ text }}
 
   {{ /if }}
+ 
+{{ /editor }}
 
-{{ /partial:layout/article }}

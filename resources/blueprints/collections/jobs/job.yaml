@@ -1,0 +1,74 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: subtitle
+            field:
+              type: text
+              display: Subtitel
+          -
+            handle: text_left
+            field:
+              buttons:
+                - h3
+                - bold
+                - unorderedlist
+                - removeformat
+                - anchor
+              toolbar_mode: floating
+              remove_empty_nodes: true
+              type: bard
+              display: 'Text (links)'
+              width: 50
+          -
+            handle: text_right
+            field:
+              buttons:
+                - h3
+                - bold
+                - unorderedlist
+                - removeformat
+                - anchor
+              toolbar_mode: floating
+              remove_empty_nodes: true
+              type: bard
+              display: 'Text (rechts)'
+              width: 50
+          -
+            handle: file
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Download
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - jobs
+              max_items: 1
+              listable: false
+              localizable: true
+title: Job

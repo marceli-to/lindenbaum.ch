@@ -1,0 +1,65 @@
+title: Akkordeon
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Titel
+      validate:
+        - required
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitel
+  -
+    handle: text_left
+    field:
+      buttons:
+        - h3
+        - bold
+        - unorderedlist
+        - removeformat
+        - anchor
+      remove_empty_nodes: false
+      type: bard
+      display: 'Text (links)'
+      width: 50
+      sets:
+        elements:
+          display: Elemente
+          icon: addon-boxes-stack
+          sets:
+            button:
+              display: Button
+              instructions: 'Button hinzufügen'
+              icon: link
+              fields:
+                -
+                  import: button
+  -
+    handle: text_right
+    field:
+      buttons:
+        - h3
+        - bold
+        - unorderedlist
+        - removeformat
+        - anchor
+      toolbar_mode: floating
+      remove_empty_nodes: true
+      type: bard
+      display: 'Text (rechts)'
+      width: 50
+      sets:
+        elements:
+          display: Elemente
+          icon: addon-boxes-stack
+          sets:
+            button:
+              display: Button
+              instructions: 'Button hinzufügen'
+              icon: link
+              fields:
+                -
+                  import: button

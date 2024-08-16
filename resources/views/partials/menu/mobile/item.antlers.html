@@ -7,7 +7,7 @@
     {{ else }}
       href="{{ url }}"
     {{ /if }}
-    class="{{ children ? 'flex justify-center items-center' : 'block' }} py-10 font-bold text-center  {{ is_current || is_parent ? '' : '' }}"
+    class="{{ children ? 'flex justify-center items-center' : 'block' }} py-10 font-bold text-center {{ is_current || is_parent ? 'is-active' : '' }}"
     target="{{ is_external ? '_blank' : '_self' }}"
     title="{{ title }}">
     {{ title }}

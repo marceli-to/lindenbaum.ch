@@ -27,12 +27,37 @@ tabs:
                   display: Hauptelemente
                   icon: addon-boxes-stack
                   sets:
-                    text:
-                      display: Text
+                    editor:
+                      display: Texteditor
                       icon: text-formatting-markdown
                       fields:
                         -
                           import: editor
+                    header_visual:
+                      display: Headerbild
+                      instructions: 'Headerbild hinzufügen'
+                      icon: media-image-picture-orientation
+                      fields:
+                        -
+                          import: header_visual
+                special_elements:
+                  display: Spezialelemente
+                  icon: addon-boxes-stack
+                  sets:
+                    gallery:
+                      display: Bildergalerie
+                      instructions: 'Bildergalerie hinzufügen'
+                      icon: media-image-picture-gallery
+                      fields:
+                        -
+                          import: gallery
+                    jobs:
+                      display: Jobs
+                      instructions: 'Liste der aktuellen Jobs'
+                      icon: file-content-list
+                      fields:
+                        -
+                          import: job_listing
   seo:
     display: SEO
     sections:

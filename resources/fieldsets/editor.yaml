@@ -1,7 +1,7 @@
 title: Editor
 fields:
   -
-    handle: text
+    handle: editor
     field:
       buttons:
         - h1
@@ -15,6 +15,19 @@ fields:
       toolbar_mode: floating
       remove_empty_nodes: true
       type: bard
-      display: Text
+      display: Editor
       container: assets
       localizable: true
+      sets:
+        special_elements:
+          display: Spezialelemente
+          instructions: 'Diverse Elemente'
+          icon: addon-boxes-stack
+          sets:
+            button:
+              display: Button
+              instructions: 'Button hinzufügen'
+              icon: link
+              fields:
+                -
+                  import: button

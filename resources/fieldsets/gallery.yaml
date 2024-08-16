@@ -1,0 +1,25 @@
+title: Bildergalerie
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Titel
+      instructions: 'Titel der Galerie (z.B. Impressionen)'
+  -
+    handle: images
+    field:
+      type: replicator
+      display: Bilder
+      sets:
+        image:
+          display: Bild
+          icon: media-image-picture-orientation
+          sets:
+            image:
+              display: Bild
+              instructions: 'Bild hinzufügen'
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  import: image

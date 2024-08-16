@@ -1,3 +1,94 @@
+/* menu */
+.theme-general header nav a.is-active {
+  @apply text-lemon;
+}
+
+.theme-laundry header nav a.is-active {
+  @apply text-sky;
+}
+
+.theme-nursery header nav a.is-active {
+  @apply text-amber;
+}
+
+/* buttons */
+.theme-general .btn-outline {
+  @apply hover:bg-lemon hover:border-lemon
+}
+
+.theme-laundry .btn-outline {
+  @apply hover:bg-sky hover:border-sky
+}
+
+.theme-nursery .btn-outline {
+  @apply hover:bg-amber hover:border-amber
+}
+
+.theme-general .btn-filled {
+  @apply bg-lemon hover:bg-steel hover:text-lemon
+}
+
+.theme-laundry .btn-filled {
+  @apply bg-sky hover:bg-steel hover:text-sky
+}
+
+.theme-nursery .btn-filled {
+  @apply bg-amber hover:bg-steel hover:text-amber
+}
+
+/* accordeon */
+.theme-general .accordeon {
+  @apply border-t border-t-lemon
+}
+
+.theme-general .accordeon-item {
+  @apply border-b border-b-lemon
+}
+
+.theme-general .accordeon-chevron {
+  @apply text-lemon
+}
+
+.theme-laundry .accordeon {
+  @apply border-t border-t-sky
+}
+
+.theme-laundry .accordeon-item {
+  @apply border-b border-b-sky
+}
+
+.theme-laundry .accordeon-chevron {
+  @apply text-sky
+}
+
+.theme-nursery .accordeon {
+  @apply border-t border-t-amber
+}
+
+.theme-nursery .accordeon-item {
+  @apply border-b border-b-amber
+}
+
+.theme-nursery .accordeon-chevron {
+  @apply text-amber
+}
+
+/* list markers */
+.theme-general main li {
+  @apply marker:text-lemon
+}
+
+.theme-nursery main li {
+  @apply marker:text-amber
+}
+
+.theme-laundry main li {
+  @apply marker:text-sky
+}
+
+
+
+/* footer */
 .theme-general footer {
   @apply bg-vanilla;
 }

@@ -1,0 +1,26 @@
+
+.fancybox__backdrop {
+  @apply !bg-white bg-opacity-95;
+}
+
+.fancybox__toolbar {
+  @apply !p-16;
+}
+
+.fancybox__content {
+  @apply !px-4 md:!px-12 lg:!px-24 xl:!px-48
+}
+
+.fancybox__nav .f-button,
+.fancybox__toolbar .f-button {
+  @apply !bg-transparent !border-none !p-0 h-24 w-24;
+}
+
+.fancybox__nav .f-button svg,
+.fancybox__toolbar .f-button svg {
+  @apply text-steel !shadow-none drop-shadow-none;
+}
+
+.fancybox__caption {
+  @apply !pb-16 !pt-0 !text-steel
+}

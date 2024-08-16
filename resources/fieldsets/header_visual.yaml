@@ -1,0 +1,11 @@
+title: Headerbild
+fields:
+  -
+    handle: image
+    field:
+      container: assets
+      type: assets
+      display: Bild
+      validate:
+        - required
+      max_files: 1

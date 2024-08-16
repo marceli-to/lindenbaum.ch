@@ -1,0 +1,28 @@
+title: Button
+fields:
+  -
+    handle: button_text
+    field:
+      type: text
+      display: Text
+      instructions: 'Angezeigter Text'
+      validate:
+        - required
+  -
+    handle: button_link
+    field:
+      type: link
+      display: Link
+      instructions: 'Link für Button'
+      validate:
+        - required
+      container: assets
+  -
+    handle: target
+    field:
+      options:
+        _self: 'Aktuelles Fenster'
+        _blank: 'Neues Fenster oder neuer Tab'
+      default: _self
+      type: select
+      display: 'Öffnen in...'
