@@ -1,19 +1,17 @@
-title: Benefits
+title: Angebote
 fields:
   -
-    handle: benefit
+    handle: service
     field:
       type: replicator
-      display: Benefit
-      collapse: true
+      display: Angebot
       sets:
-        benefit:
-          display: Benefit
-          instructions: 'Benefit hinzufügen'
-          icon: text-formatting-image-top
+        neue_set-gruppe:
+          display: 'Neue Set-Gruppe'
           sets:
             card:
               display: Kachel
+              instructions: 'Angebot hinzufügen'
               icon: media-image-picture-orientation
               fields:
                 -
@@ -24,17 +22,19 @@ fields:
                     validate:
                       - required
                 -
-                  handle: text
-                  field:
-                    type: textarea
-                    display: Text
-                -
                   handle: illustration
                   field:
                     max_files: 1
                     container: assets
                     type: assets
                     display: Illustration
-                    folder: illustrationen
                     validate:
                       - required
+                    folder: illustrationen
+                -
+                  handle: link
+                  field:
+                    collections:
+                      - pages
+                    type: link
+                    display: Link

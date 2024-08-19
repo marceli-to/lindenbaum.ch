@@ -66,6 +66,13 @@ tabs:
                       fields:
                         -
                           import: job_listing
+                    services:
+                      display: Angebote
+                      instructions: 'Angebote hinzufügen'
+                      icon: text-formatting-image-top
+                      fields:
+                        -
+                          import: services
                     benefits:
                       display: Benefits
                       instructions: 'Liste der Benefits'

@@ -14,6 +14,10 @@
   {{ partial:components/misc/benefits }}
 {{ /if }}
 
+{{ if type == 'services' }}
+  {{ partial:components/misc/services }}
+{{ /if }}
+
 {{ if type == 'intro' }}
   {{ partial:components/misc/intro }}
 {{ /if }}
