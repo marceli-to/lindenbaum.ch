@@ -27,19 +27,6 @@ tabs:
                   display: Hauptelemente
                   icon: addon-boxes-stack
                   sets:
-                    editor:
-                      display: Texteditor
-                      icon: text-formatting-markdown
-                      fields:
-                        -
-                          import: editor
-                    header_visual:
-                      display: Headerbild
-                      instructions: 'Headerbild hinzufügen'
-                      icon: media-image-picture-orientation
-                      fields:
-                        -
-                          import: header_visual
                     intro:
                       display: Intro
                       instructions: 'Seitenintro mit Titel und optionalem Text'
@@ -47,6 +34,12 @@ tabs:
                       fields:
                         -
                           import: intro
+                    editor:
+                      display: Texteditor
+                      icon: text-formatting-markdown
+                      fields:
+                        -
+                          import: editor
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack
@@ -72,6 +65,13 @@ tabs:
                       fields:
                         -
                           import: benefits
+                    team:
+                      display: Team
+                      instructions: 'Team hinzufügen'
+                      icon: dashboard-layout
+                      fields:
+                        -
+                          import: team
   media:
     display: Medien
     sections:

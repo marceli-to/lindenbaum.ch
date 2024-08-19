@@ -5,6 +5,7 @@ fields:
     field:
       type: replicator
       display: Benefit
+      collapse: true
       sets:
         benefit:
           display: Benefit

@@ -1,0 +1,19 @@
+{{ partial:layout/inner }}
+  {{ if title}}
+    <h2>{{ title }}</h2>
+  {{ /if }}
+  <section class="sm:grid sm:grid-cols-12 sm:gap-x-20 sm:gap-y-20 lg:gap-y-30">
+    {{ member }}
+      <article class="mb-30 sm:mb-0 sm:col-span-6 lg:col-span-4">
+        {{ partial:components/media/image 
+          :image="image" 
+          class="w-full h-auto object-cover"
+          preset="focal-16-10" }}
+          <div class="mt-10 lg:mt-20">
+            <h3 class="text-md lg:text-lg mb-3 uppercase">{{ name }}</h3>
+            <strong>{{ role }}</strong>
+          </div>
+      </article>
+    {{ /member}}
+  </section>
+{{ /partial:layout/inner }}

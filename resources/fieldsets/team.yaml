@@ -1,0 +1,43 @@
+title: Team
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Titel
+  -
+    handle: member
+    field:
+      type: replicator
+      display: Mitglied
+      collapse: true
+      sets:
+        member:
+          display: Mitglied
+          instructions: 'Teammitglied hinzufügen'
+          icon: text-formatting-image-top
+          sets:
+            member:
+              display: Mitglied
+              instructions: 'Teammitglied hinzufügen'
+              icon: text-formatting-image-top
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Portrait
+                -
+                  handle: name
+                  field:
+                    type: text
+                    display: Name
+                    validate:
+                      - required
+                -
+                  handle: role
+                  field:
+                    type: text
+                    display: Funktion

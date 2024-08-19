@@ -1,14 +1,16 @@
-{{ editor }}
+{{ partial:layout/inner }}
+  {{ editor }}
 
-  {{ if type == 'button' }}
+    {{ if type == 'button' }}
 
-    {{ partial:components/buttons/primary type="outline" }}
+      {{ partial:components/buttons/primary type="outline" }}
 
-  {{ else }}
+    {{ else }}
 
-    {{ text }}
+      {{ text }}
 
-  {{ /if }}
- 
-{{ /editor }}
+    {{ /if }}
+  
+  {{ /editor }}
+{{ /partial:layout/inner }}
 

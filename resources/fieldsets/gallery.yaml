@@ -11,6 +11,7 @@ fields:
     field:
       type: replicator
       display: Bilder
+      collapse: true
       sets:
         image:
           display: Bild
