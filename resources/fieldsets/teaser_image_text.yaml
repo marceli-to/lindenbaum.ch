@@ -1,0 +1,30 @@
+title: 'Bild/Text Teaser'
+fields:
+  -
+    handle: sequence
+    field:
+      options:
+        default: Bild/Text
+        mirror: Text/Bild
+      default: default
+      type: select
+      display: Abfolge
+      instructions: 'Reihenfolge Bild und Text'
+  -
+    handle: title
+    field:
+      type: text
+      display: Titel
+      validate:
+        - required
+  -
+    import: editor
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Bild
+  -
+    import: button

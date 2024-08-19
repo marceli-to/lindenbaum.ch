@@ -1,0 +1,47 @@
+title: Downloads
+fields:
+  -
+    handle: download_group
+    field:
+      type: replicator
+      display: 'Download Gruppe'
+      collapse: true
+      sets:
+        section:
+          display: Sektion
+          sets:
+            section:
+              display: Downloads
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Titel
+                    validate:
+                      - required
+                -
+                  handle: files
+                  field:
+                    collapse: true
+                    type: replicator
+                    display: Dateien
+                    sets:
+                      download:
+                        display: Download
+                        sets:
+                          download:
+                            display: Download
+                            fields:
+                              -
+                                handle: file
+                                field:
+                                  max_files: 1
+                                  container: assets
+                                  type: assets
+                                  display: Datei
+                              -
+                                handle: title
+                                field:
+                                  type: text
+                                  display: Titel

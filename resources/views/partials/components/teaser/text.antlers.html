@@ -1,4 +1,5 @@
-{{ partial:layout/inner }}
+<article class="sm:col-span-6 {{ class }}">
+  <h2>{{ title }}</h2>
   {{ editor }}
     {{ if type == 'button' }}
       {{ partial:components/buttons/primary type="outline" }}
@@ -6,5 +7,4 @@
       {{ text }}
     {{ /if }}
   {{ /editor }}
-{{ /partial:layout/inner }}
-
+</article>

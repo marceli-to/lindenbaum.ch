@@ -1,5 +1,5 @@
 
-<div class="md:flex w-full mt-50 lg:mt-80 mb-40 lg:mb-60">
+<div class="md:flex w-full {{ header_image ? 'mt-50 lg:mt-80' : 'mt-80 lg:mt-120' }} mb-60 lg:mb-80">
   <div class="md:w-[55%] overflow-hidden">
     {{ title }}
       <div class="flex items-center w-full">
@@ -13,7 +13,7 @@
       </div>
     {{ /title }}
   </div>
-  {{ editor }}
+  {{ if editor }}
     <div class="md:w-[45%] mt-40 md:mt-0 px-20">
       <div class="max-w-[440px]">
         {{ editor }}
@@ -25,5 +25,5 @@
         {{ /editor }}
       </div>
     </div>
-  {{ /editor}}
+  {{ /if }}
 </div>

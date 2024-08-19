@@ -1,0 +1,23 @@
+{{ if direction == 'ltr' }}
+  <figure class="pb-78 {{ class }}">
+    <div class="inline-block relative">
+    {{ partial:components/media/image 
+      :image="image" 
+      class="w-full h-auto object-cover"
+      preset="focal-16-10" }}
+    <span class="bg-lemon w-12 h-156 absolute -bottom-84 left-36 before:content-[''] before:block before:absolute before:w-12 before:bg-lemon before:h-156 before:-left-24 before:bottom-0 after:content-[''] after:block after:absolute after:w-12 after:bg-lemon after:h-156 after:left-24 after:bottom-0"></span>
+    {{ partial:components/buttons/primary type="outline" class="absolute -bottom-84 left-90 px-30" }}
+    </div>
+  </figure>
+{{ else }}
+  <figure class="pb-78 {{ class }}">
+    <div class="inline-block relative">
+      {{ partial:components/media/image 
+        :image="image" 
+        class="w-full h-auto object-cover"
+        preset="focal-16-10" }}
+      <span class="bg-lemon w-12 h-156 absolute -bottom-84 right-36 before:content-[''] before:block before:absolute before:w-12 before:bg-lemon before:h-156 before:-right-24 before:bottom-0 after:content-[''] after:block after:absolute after:w-12 after:bg-lemon after:h-156 after:right-24 after:bottom-0"></span>
+      {{ partial:components/buttons/primary type="outline" class="absolute -bottom-84 right-90 px-30" }}
+    </div>
+  </figure>
+{{ /if }}

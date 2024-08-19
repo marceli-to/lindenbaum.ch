@@ -1,0 +1,19 @@
+{{ partial:layout/inner }}
+  <section class="sm:grid sm:grid-cols-12 sm:gap-x-20 sm:gap-y-30 lg:gap-y-40">
+    {{ download_group }}
+      <article class="mb-30 sm:mb-0 sm:col-span-4">
+        <h2>{{ title }}</h2>
+        {{ files }}
+        <div>
+        {{ partial:components/buttons/primary 
+            type="outline" 
+            :button_link="file" 
+            :button_text="title"
+            target="_blank"
+            class="px-20 lg:px-30 mb-12" }}
+          </div>
+        {{ /files }}
+      </article>
+    {{ /download_group }}
+  </section>
+{{ /partial:layout/inner }}

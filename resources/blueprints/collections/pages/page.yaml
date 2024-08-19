@@ -36,10 +36,18 @@ tabs:
                           import: intro
                     editor:
                       display: Texteditor
+                      instructions: 'Editor für Text hinzufügen'
                       icon: text-formatting-markdown
                       fields:
                         -
                           import: editor
+                    teaser_image_text:
+                      display: 'Bild/Text Teaser'
+                      instructions: 'Bild/Text Teaser hinzufügen'
+                      icon: text-formatting-image-left
+                      fields:
+                        -
+                          import: teaser_image_text
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack
@@ -72,6 +80,13 @@ tabs:
                       fields:
                         -
                           import: team
+                    downloads:
+                      display: Downloads
+                      instructions: 'Downloads hinzufügen'
+                      icon: download-arrow-down
+                      fields:
+                        -
+                          import: downloads
   media:
     display: Medien
     sections:

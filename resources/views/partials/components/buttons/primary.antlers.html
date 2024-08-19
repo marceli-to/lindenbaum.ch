@@ -5,7 +5,7 @@
   {{ if target == '_blank' }} 
     rel="noopener noreferrer"
   {{ /if }}
-  class="{{ type == 'outline' ? 'btn-outline border border-steel' : 'btn-filled' }} inline-flex items-center justify-center font-bold text-steel uppercase text-xs leading-none tracking-wide px-8 py-2 min-h-28 transition-colors {{ class }}">
+  class="{{ type == 'outline' ? 'btn-outline border border-steel' : 'btn-filled' }} inline-flex items-center justify-center font-bold text-steel uppercase text-xs !leading-none tracking-wide px-8 py-2 pt-4 min-h-28 transition-colors {{ class }}">
   {{ button_text }}
   {{ is_external ? 'external-link' : '' }}
 </a>
