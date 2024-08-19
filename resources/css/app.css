@@ -42,7 +42,7 @@ h2 {
 }
 
 h3 {
-  @apply font-bold
+  @apply font-bold uppercase
 }
 
 em, i {

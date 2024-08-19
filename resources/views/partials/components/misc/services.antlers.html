@@ -1,14 +1,14 @@
 <div class="bg-lemon">
   {{ partial:layout/inner class="!my-0 py-30 lg:py-50" }}
     <h2>Angebote</h2>
-    <section class="sm:grid sm:grid-cols-6 sm:gap-x-20 sm:gap-y-20 lg:gap-y-30">
+    <section class="grid grid-cols-12 gap-20 lg:gap-30">
       {{ service }}
-        <figure class="relative group aspect-square lg:col-span-1">
+        <figure class="relative group aspect-square col-span-6 md:col-span-4 lg:col-span-2">
           <a 
             href="{{ link }}"
             title="{{ title }}">
             <img src="{{ illustration:url }}" width="400" height="400" alt="{{ illustration:alt }}" class="mb-15 w-full h-auto aspect-square object-cover group-hover:scale-110 transition-transform transition-duration-500">
-            <h3 class="text-center uppercase group-hover:text-white transition-colors transition-duration-500">
+            <h3 class="text-center group-hover:text-white transition-colors transition-duration-500">
               {{ title }}
             </h3>
           </a>

@@ -1,0 +1,25 @@
+title: 'News Sektion'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Titel
+      validate:
+        - required
+  -
+    handle: news
+    field:
+      type: replicator
+      display: News
+      sets:
+        neue_set-gruppe:
+          display: 'Neue Set-Gruppe'
+          sets:
+            news:
+              display: News
+              instructions: 'News hinzufügen'
+              icon: media-news-paper
+              fields:
+                -
+                  import: news

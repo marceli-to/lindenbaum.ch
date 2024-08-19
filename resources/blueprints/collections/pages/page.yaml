@@ -48,6 +48,13 @@ tabs:
                       fields:
                         -
                           import: teaser_image_text
+                    news:
+                      display: News
+                      instructions: 'News Sektion hinzufügen'
+                      icon: media-news-paper
+                      fields:
+                        -
+                          import: news_section
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack

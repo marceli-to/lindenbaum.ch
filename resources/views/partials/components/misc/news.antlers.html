@@ -1,0 +1,43 @@
+{{ partial:layout/inner }}
+  <h2>{{ title }}</h2>
+  {{ news }}
+    <article class="sm:grid sm:grid-cols-12 sm:gap-20 lg:gap-30">
+      <div class="sm:col-span-6 lg:col-span-5">
+      {{ partial:components/media/image 
+        :image="image" 
+        class="w-full h-auto object-cover"
+        preset="focal-16-10" }}
+
+      {{ if has_contact_info }}
+        <div class="bg-vanilla p-10 lg:p-20 my-20 lg:mb-0 lg:mt-30">
+          <h3 class="mb-10">Ansprechpartner:in</h3>
+          {{ if name }}
+            <h4 class="font-bold mb-2">{{ name }}</h4>
+          {{ /if }}
+          {{ if phone || email }}
+          <div class="lg:flex lg:space-x-15">
+            {{ if phone }}
+              <div class="mb-2 lg:mb-0">Telefon: <a href="tel:{{ phone }}">{{ phone }}</a></div>
+            {{ /if }}
+            {{ if email }}
+              <div>E-Mail: <a href="mailto:{{ email }}">{{ email }}</a></div>
+            {{ /if }}
+          {{ /if }}
+          </div> 
+        </div>
+      {{ /if }}
+
+      </div>
+      <div class="sm:col-span-6 lg:col-span-7">
+        <h3 class="mb-5 max-w-[440px] text-balance">{{ title }}</h3>
+        {{ editor }}
+          {{ if type == 'button' }}
+            {{ partial:components/buttons/primary type="outline" }}
+          {{ else }}
+            {{ text }}
+          {{ /if }}
+        {{ /editor }}
+      </div>
+    </article>
+  {{ /news}}
+{{ /partial:layout/inner }}
