@@ -1,5 +1,6 @@
 @import "typo/webfonts.css";
 @import "fancybox.css";
+@import "forms.css";
 @import "theme.css";
 
 @tailwind base;

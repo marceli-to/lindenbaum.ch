@@ -1,0 +1,43 @@
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea,
+select {
+  @apply w-full text-steel py-5 border-b border-b-lemon !ring-0 focus:outline-none focus:!ring-0 focus:text-steel placeholder:text-white
+}
+
+.has-error input[type=text],
+.has-error input[type=email],
+.has-error input[type=tel],
+.has-error textarea,
+.has-error select {
+  @apply bg-white
+}
+
+.has-error label {
+  @apply text-red-600 font-bold
+}
+
+select {
+  @apply bg-right-center bg-lemon appearance-none bg-dropdown bg-no-repeat accent-transparent mt-5 lg:mt-10
+}
+
+textarea {
+  @apply min-h-[80px] lg:min-h-[160px] border border-lemon !p-5 block;
+} 
+
+.checkboxes label {
+  @apply flex items-center cursor-pointer leading-none
+}
+
+main .content .checkboxes label a {
+  @apply inline-block mx-5 !underline hover:!no-underline
+}
+
+.checkboxes label:hover {
+  @apply text-lemon
+}
+
+.checkboxes input[type=checkbox] {
+  @apply mr-15 -mt-3 w-20 h-20 ring-0 focus:ring-0 !ring-offset-0 !outline-none !border-none text-lemon bg-lemon accent-lemon
+}

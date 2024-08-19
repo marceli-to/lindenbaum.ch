@@ -1,0 +1,10 @@
+title: 'Kontakt (Allgemein, Wohnen, Wäscherei)'
+honeypot: webs1te
+email:
+  -
+    id: m00zx8ss
+    to: m@marceli.to
+    from: no-reply@lindenbaum.ch
+    reply_to: no-reply@lindenbaum.ch
+    subject: 'Kontaktformular {{subject}}'
+    mailer: smtp

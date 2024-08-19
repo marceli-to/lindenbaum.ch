@@ -37,3 +37,7 @@
 {{ if type == 'teaser_image_text' }}
   {{ partial:components/teaser/image_text }}
 {{ /if }}
+
+{{ if type == 'contact_form'}}
+  {{ partial:forms/wrapper}}
+{{ /if }}

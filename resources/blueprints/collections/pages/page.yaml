@@ -101,6 +101,12 @@ tabs:
                       fields:
                         -
                           import: downloads
+                    contact_form:
+                      display: Kontaktformular
+                      icon: form-text-field
+                      fields:
+                        -
+                          import: contact_form
   media:
     display: Medien
     sections:
