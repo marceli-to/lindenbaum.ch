@@ -68,6 +68,7 @@
   </form>
 </template>
 
+
 <script setup>
 import { ref } from 'vue';
 import axios from 'axios';
@@ -78,8 +79,14 @@ import FormTextArea from '../components/fields/textarea.vue';
 import FormButton from '../components/fields/button.vue';
 import FormToc from '../components/fields/toc.vue';
 
-// Define emits
-const emit = defineEmits(['form-submitted']);
+const emit = defineEmits(['form-success', 'form-error', 'form-reset']);
+
+const props = defineProps({
+  service: {
+    type: String,
+    required: true
+  }
+});
 
 const form = ref({
   name: '',
@@ -100,9 +107,11 @@ const errors = ref({
 });
 
 async function submitForm() {
+  emit('form-reset');
   try {
     const response = await axios.post('/api/contact/general', {
       ...form.value,
+      service: props.service
     });
     handleSuccess();
     return true;
@@ -122,13 +131,30 @@ function handleSuccess() {
     message: '',
     toc: false,
   };
-  emit('form-submitted');
+  errors.value = {
+    name: '',
+    firstname: '',
+    email: '',
+    phone: '',
+    message: '',
+    toc: '',
+  };
+  emit('form-success');
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 }
 
 function handleError(error) {
   if (error.response && error.response.data && typeof error.response.data.errors === 'object') {
     Object.keys(error.response.data.errors).forEach(key => {
       errors.value[key] = error.response.data.errors[key][0];
+    });
+    emit('form-error');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
   }
 }

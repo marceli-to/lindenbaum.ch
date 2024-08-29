@@ -14,8 +14,9 @@ class ContactUserEmail extends Notification
    *
    * @return void
    */
-  public function __construct($data)
+  public function __construct($subject,$data)
   {
+    $this->subject = $subject;
     $this->data = $data;
   }
 
@@ -41,8 +42,8 @@ class ContactUserEmail extends Notification
     return (new MailMessage)
       ->from(env('MAIL_FROM_ADDRESS'))
       ->replyTo(env('MAIL_TO'))
-      ->subject('lindenbaum.ch – Anfrage')
-      ->markdown('mail.contact-user', ['data' => $this->data]);
+      ->subject('lindenbaum.ch – ' . $this->subject)
+      ->markdown('mail.contact-user', ['data' => $this->data, 'subject' => $this->subject]);
   }
 
   /**

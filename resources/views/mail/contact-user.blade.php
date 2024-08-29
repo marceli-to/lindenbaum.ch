@@ -7,6 +7,10 @@
     <strong>Ihre Angaben:</strong>
   </div>
   <div class="text-base pb-base">
+    <strong>Dienstleistung</strong><br>
+    {{ $subject }}
+  </div>
+  <div class="text-base pb-base">
     <strong>Vorname</strong><br>
     {{ $data['firstname'] }}
   </div>
@@ -14,4 +18,16 @@
     <strong>Name</strong><br>
     {{ $data['name'] }}
   </div>
- </x-mail::message>
+  <div class="text-base pb-base">
+    <strong>Email</strong><br>
+    {{ $data['email'] }}
+  </div>
+  <div class="text-base pb-base">
+    <strong>Telefon</strong><br>
+    {{ $data['phone'] }}
+  </div>
+  <div class="text-base pb-base">
+    <strong>Nachricht</strong><br>
+    {{ $data['message'] }}
+  </div>
+</x-mail::message>
