@@ -1,0 +1,57 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: service
+            field:
+              type: text
+              display: Dienstleistung
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+          -
+            handle: firstname
+            field:
+              type: text
+              display: Vorname
+          -
+            handle: email
+            field:
+              input_type: email
+              type: text
+              display: E-Mail
+          -
+            handle: phone
+            field:
+              input_type: tel
+              type: text
+              display: Telefon
+          -
+            handle: message
+            field:
+              type: textarea
+              display: Nachricht
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+title: 'Anfragen (Generell)'

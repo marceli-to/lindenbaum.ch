@@ -15,12 +15,13 @@ export default {
     extend: {
 
       backgroundPosition: {
-        'right-center': 'right 10px center',
+        'right-center': 'right center',
       },
 
       backgroundImage: {
         'marker': "url('../img/marker.svg')",
-        'dropdown': "url(\"data:image/svg+xml,%3Csvg width='18' height='12' viewBox='0 0 18 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.7 1.84095L9.20001 9.39999L1.70001 1.84095' stroke='white' stroke-width='3'/%3E%3C/svg%3E\")",
+        'dropdown': "url(\"data:image/svg+xml,%3Csvg width='18' height='12' viewBox='0 0 18 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.7 1.84095L9.20001 9.39999L1.70001 1.84095' stroke='%23dedf15' stroke-width='2'/%3E%3C/svg%3E\")",
+
       },
 
       screens: {

@@ -1,0 +1,39 @@
+{{ partial:layout/inner }}
+  <section class="lg:w-1/2">
+    <form wire:submit="save" class="mt-15 lg:mt-20">
+      {{ if errors }}
+        <div class="mb-15 lg:mb-20">
+          <ul class="list-disc pl-16 text-red-600">
+            {{ errors }}
+              <li>{{ value }}</li>
+            {{ /errors }}
+          </ul>
+        </div>
+      {{ /if }}
+
+
+      {{ partial:forms/elements/group }}
+        <div :class="{ 'has-error': '{{ errors.first('name') ? true : false }}' }">
+          {{ partial:forms/elements/label }}
+            Name
+          {{ /partial:forms/elements/label }}
+          <input type="text" wire:model="name" @focus="focused = true" />
+        </div>
+        <div :class="{ 'has-error': '{{ errors.first('firstname') ? true : false }}' }">
+          {{ partial:forms/elements/label }}
+            Vorname
+          {{ /partial:forms/elements/label }}
+          <input type="text" wire:model="firstname" @focus="focused = true" />
+        </div>
+        <div :class="{ 'has-error': '{{ errors.first('email') ? true : false }}' }">
+          {{ partial:forms/elements/label }}
+            E-Mail
+          {{ /partial:forms/elements/label }}
+          <input type="email" wire:model="email" @focus="focused = true" />
+        </div>
+        {{ partial:forms/elements/button label="Absenden" }}
+      {{ /partial:forms/elements/group }}
+    </form>
+  </section>
+
+{{ /partial:layout/inner }}

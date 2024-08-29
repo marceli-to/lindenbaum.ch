@@ -1,6 +1,9 @@
 <?php
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\Api\RegistrationController;
+use App\Http\Controllers\Api\ContactFormController;
+
 
 
 /*
@@ -13,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+// Route::post('/register-conference', [RegistrationController::class, 'registerConference']);
+Route::post('/contact/general', [ContactFormController::class, 'general']);
+

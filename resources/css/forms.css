@@ -3,7 +3,7 @@ input[type=email],
 input[type=tel],
 textarea,
 select {
-  @apply w-full text-steel py-5 border-b border-b-lemon !ring-0 focus:outline-none focus:!ring-0 focus:text-steel placeholder:text-white
+  @apply w-full text-steel py-5 border-b border-b-lemon !ring-0 focus:outline-none focus:!ring-0 focus:text-steel
 }
 
 .has-error input[type=text],
@@ -15,11 +15,19 @@ select {
 }
 
 .has-error label {
-  @apply text-red-600 font-bold
+  @apply text-red-600
+}
+
+.has-error input[type=text],
+.has-error input[type=email],
+.has-error input[type=tel],
+.has-error textarea,
+.has-error select {
+  @apply border-b-red-600
 }
 
 select {
-  @apply bg-right-center bg-lemon appearance-none bg-dropdown bg-no-repeat accent-transparent mt-5 lg:mt-10
+  @apply block w-full text-steel !py-5 appearance-none bg-right-center bg-white bg-dropdown bg-no-repeat accent-transparent
 }
 
 textarea {
@@ -27,17 +35,24 @@ textarea {
 } 
 
 .checkboxes label {
-  @apply flex items-center cursor-pointer leading-none
+  @apply flex items-center cursor-pointer
 }
 
-main .content .checkboxes label a {
-  @apply inline-block mx-5 !underline hover:!no-underline
-}
-
-.checkboxes label:hover {
-  @apply text-lemon
+.checkboxes label a:hover {
+  @apply underline underline-offset-4 decoration-1
 }
 
 .checkboxes input[type=checkbox] {
-  @apply mr-15 -mt-3 w-20 h-20 ring-0 focus:ring-0 !ring-offset-0 !outline-none !border-none text-lemon bg-lemon accent-lemon
+  @apply appearance-none w-20 h-20 ring-0 focus:ring-0 !ring-offset-0 !rounded-none !outline-none border border-lemon text-steel bg-white !accent-lemon
+}
+
+.checkboxes.has-error input[type=checkbox] {
+  @apply border-red-600
+}
+
+.checkboxes input[type=checkbox]:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23DEDF15' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px;
 }

@@ -1,5 +1,8 @@
 <div class="md:col-span-6 {{ class }}">
-  <button class="border-none bg-tangerine hover:bg-jungle text-white font-syntaxblack p-10 lg:p-15 flex items-center !leading-none transition-all">
+  <button class="btn-outline border border-steel inline-flex items-center justify-center font-bold text-steel uppercase text-xs !leading-none tracking-wide px-20 lg:px-30 py-2 pt-4 min-h-28 transition-colors">
+    <div wire:loading>
+      {{ partial:forms/elements/spinner }}
+    </div>
     {{ label }}
   </button>
 </div>
