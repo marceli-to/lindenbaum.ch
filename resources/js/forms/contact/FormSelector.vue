@@ -1,13 +1,22 @@
 <template>
-  <form-group>
-    <form-label id="form-selector" label="Dienstleistung" required />
-    <select id="form-selector" v-model="selectedForm">
-      <option value="allgemein" selected>Allgemein</option>
-      <option value="wohnen">Wohnen</option>
-      <option value="waescherei">Wäscherei</option>
-    </select>
-  </form-group>
-  <component :is="currentFormComponent" v-if="currentFormComponent"></component>
+  <div>
+    <div class="text-steel bg-green-100 mb-20 xl:mb-40 p-10 border border-green-500" v-if="formSubmitted">
+      Vielen Dank für Ihre Anfrage!
+    </div>
+    <form-group>
+      <form-label id="form-selector" label="Dienstleistung" required />
+      <select id="form-selector" v-model="selectedForm">
+        <option value="allgemein" selected>Allgemein</option>
+        <option value="wohnen">Wohnen</option>
+        <option value="waescherei">Wäscherei</option>
+      </select>
+    </form-group>
+    <component 
+      :is="currentFormComponent" 
+      v-if="currentFormComponent" 
+      @form-submitted="formSubmitted = true">
+    </component>
+  </div>
 </template>
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue';
@@ -29,6 +38,8 @@ const currentFormComponent = computed(() => {
       return GeneralRequestForm;
   }
 });
+
+const formSubmitted = ref(false);
 
 const updateFormFromHash = () => {
   const hash = window.location.hash.slice(1);

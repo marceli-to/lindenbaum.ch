@@ -78,6 +78,8 @@ import FormTextArea from '../components/fields/textarea.vue';
 import FormButton from '../components/fields/button.vue';
 import FormToc from '../components/fields/toc.vue';
 
+// Define emits
+const emit = defineEmits(['form-submitted']);
 
 const form = ref({
   name: '',
@@ -102,14 +104,32 @@ async function submitForm() {
     const response = await axios.post('/api/contact/general', {
       ...form.value,
     });
-    // Handle success
+    handleSuccess();
+    return true;
+
   } catch (error) {
-    // Handle errors
-    if (typeof error.response.data.errors === 'object') {
-      Object.keys(error.response.data.errors).forEach(key => {
-        errors.value[key] = error.response.data.errors[key][0];
-      });
-    }
+    handleError(error);
+    return false;
+  }
+}
+
+function handleSuccess() {
+  form.value = {
+    name: '',
+    firstname: '',
+    email: '',
+    phone: '',
+    message: '',
+    toc: false,
+  };
+  emit('form-submitted');
+}
+
+function handleError(error) {
+  if (error.response && error.response.data && typeof error.response.data.errors === 'object') {
+    Object.keys(error.response.data.errors).forEach(key => {
+      errors.value[key] = error.response.data.errors[key][0];
+    });
   }
 }
 </script>
