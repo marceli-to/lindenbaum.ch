@@ -1,10 +1,7 @@
 <?php
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\Api\RegistrationController;
 use App\Http\Controllers\Api\ContactFormController;
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +14,6 @@ use App\Http\Controllers\Api\ContactFormController;
 |
 */
 
-// Route::post('/register-conference', [RegistrationController::class, 'registerConference']);
 Route::post('/contact-request/general', [ContactFormController::class, 'general']);
 Route::post('/contact-request/room', [ContactFormController::class, 'room']);
 Route::post('/contact-request/nursery', [ContactFormController::class, 'nursery']);
