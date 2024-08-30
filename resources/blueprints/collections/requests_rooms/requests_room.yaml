@@ -15,7 +15,7 @@ tabs:
             handle: service
             field:
               type: text
-              display: Dienstleistung
+              display: Service
           -
             handle: name
             field:
@@ -35,9 +35,19 @@ tabs:
           -
             handle: phone
             field:
-              input_type: tel
               type: text
               display: Telefon
+          -
+            handle: date_start
+            field:
+              format: d.m.Y
+              type: date
+              display: Datum
+          -
+            handle: room
+            field:
+              type: text
+              display: Raum
           -
             handle: message
             field:
@@ -54,4 +64,4 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
-title: 'Anfragen (Generell)'
+title: 'Anfragen (Räume)'

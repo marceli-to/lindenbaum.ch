@@ -1,0 +1,66 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: service
+            field:
+              type: text
+              display: Service
+          -
+            handle: shares
+            field:
+              type: text
+              display: 'Anzahl Anteile'
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+          -
+            handle: firstname
+            field:
+              type: text
+              display: Vorname
+          -
+            handle: date_of_birth
+            field:
+              type: date
+              display: Geburtsdatum
+          -
+            handle: email
+            field:
+              input_type: email
+              type: text
+              display: E-Mail
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+          -
+            handle: message
+            field:
+              type: textarea
+              display: Nachricht
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+title: 'Formular (Genossenschaft)'

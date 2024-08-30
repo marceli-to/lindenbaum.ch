@@ -1,9 +1,15 @@
 input[type=text],
 input[type=email],
 input[type=tel],
+input[type=date],
+input[type=number],
 textarea,
 select {
   @apply w-full text-steel py-5 border-b border-b-lemon !ring-0 focus:outline-none focus:!ring-0 focus:text-steel
+}
+
+input[type=date] {
+  @apply appearance-none
 }
 
 select {
@@ -17,7 +23,7 @@ textarea {
 } 
 
 .checkboxes label {
-  @apply flex items-center cursor-pointer
+  @apply cursor-pointer
 }
 
 .checkboxes label a:hover {

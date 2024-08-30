@@ -1,6 +1,16 @@
 <template>
   <form @submit.prevent="submitForm">
     <form-group>
+      <form-label id="shares" label="Anzahl der Anteile" required />
+      <form-text-field 
+        type="number"
+        v-model="form.shares" 
+        :error="errors.shares"
+        @update:error="errors.shares = $event"
+        min="1"
+      />
+    </form-group>
+    <form-group>
       <form-label id="name" label="Name" required />
       <form-text-field 
         v-model="form.name" 
@@ -14,6 +24,31 @@
         v-model="form.firstname" 
         :error="errors.firstname"
         @update:error="errors.firstname = $event"
+      />
+    </form-group>
+    <form-group>
+      <form-label id="date_of_birth" label="Geburtsdatum" required />
+      <form-text-field 
+        type="date"
+        v-model="form.date_of_birth" 
+        :error="errors.date_of_birth"
+        @update:error="errors.date_of_birth = $event"
+      />
+    </form-group>
+    <form-group>
+      <form-label id="street" label="Straße" required />
+      <form-text-field 
+        v-model="form.street" 
+        :error="errors.street"
+        @update:error="errors.street = $event"
+      />
+    </form-group>
+    <form-group>
+      <form-label id="location" label="Ort" required />
+      <form-text-field 
+        v-model="form.location" 
+        :error="errors.location"
+        @update:error="errors.location = $event"
       />
     </form-group>
     <form-group>
@@ -58,9 +93,9 @@
         :disabled="isSubmitting"
       />
     </form-group>
-
   </form>
 </template>
+
 <script setup>
 import { ref } from 'vue';
 import axios from 'axios';
@@ -81,19 +116,27 @@ const props = defineProps({
 });
 
 const form = ref({
+  shares: 1,
   name: '',
   firstname: '',
+  street: '',
+  location: '',
   email: '',
   phone: '',
+  date_of_birth: '',
   message: '',
   toc: false,
 });
 
 const errors = ref({
+  shares: '',
   name: '',
   firstname: '',
+  street: '',
+  location: '',
   email: '',
   phone: '',
+  date_of_birth: '',
   message: '',
   toc: '',
 });
@@ -104,13 +147,12 @@ async function submitForm() {
   isSubmitting.value = true;
   emit('form-reset');
   try {
-    const response = await axios.post('/api/contact-request/general', {
+    const response = await axios.post('/api/contact-request/cooperative', {
       ...form.value,
       service: props.service
     });
     handleSuccess();
     return true;
-
   } catch (error) {
     handleError(error);
     return false;
@@ -119,18 +161,26 @@ async function submitForm() {
 
 function handleSuccess() {
   form.value = {
+    shares: 1,
     name: '',
     firstname: '',
+    street: '',
+    location: '',
     email: '',
     phone: '',
+    date_of_birth: '',
     message: '',
     toc: false,
   };
   errors.value = {
+    shares: '',
     name: '',
     firstname: '',
+    street: '',
+    location: '',
     email: '',
     phone: '',
+    date_of_birth: '',
     message: '',
     toc: '',
   };

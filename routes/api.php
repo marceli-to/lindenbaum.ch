@@ -18,5 +18,10 @@ use App\Http\Controllers\Api\ContactFormController;
 */
 
 // Route::post('/register-conference', [RegistrationController::class, 'registerConference']);
-Route::post('/contact/general', [ContactFormController::class, 'general']);
+Route::post('/contact-request/general', [ContactFormController::class, 'general']);
+Route::post('/contact-request/room', [ContactFormController::class, 'room']);
+Route::post('/contact-request/nursery', [ContactFormController::class, 'nursery']);
+Route::post('/contact-request/cooperative', [ContactFormController::class, 'cooperative']);
+
+
 

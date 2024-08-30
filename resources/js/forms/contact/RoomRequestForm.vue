@@ -29,9 +29,29 @@
       <form-label id="phone" label="Telefon" required />
       <form-text-field 
         type="tel"
+        :min="minDate"
         v-model="form.phone" 
         :error="errors.phone"
         @update:error="errors.phone = $event"
+      />
+    </form-group>
+    <form-group>
+      <form-label id="room" label="Raum" required />
+      <form-select 
+        v-model="form.room" 
+        :error="errors.room"
+        @update:error="errors.room = $event"
+        :options="rooms"
+      />
+    </form-group>
+    <form-group>
+      <form-label id="date" label="Datum" required />
+      <form-text-field 
+        type="date"
+        :min="minDate"
+        v-model="form.date_start" 
+        :error="errors.date_start"
+        @update:error="errors.date = $event"
       />
     </form-group>
     <form-group>
@@ -58,7 +78,6 @@
         :disabled="isSubmitting"
       />
     </form-group>
-
   </form>
 </template>
 <script setup>
@@ -70,6 +89,7 @@ import FormLabel from '../components/fields/label.vue';
 import FormTextArea from '../components/fields/textarea.vue';
 import FormButton from '../components/fields/button.vue';
 import FormToc from '../components/fields/toc.vue';
+import FormSelect from '../components/fields/select.vue';
 
 const emit = defineEmits(['form-success', 'form-error', 'form-reset']);
 
@@ -86,6 +106,8 @@ const form = ref({
   email: '',
   phone: '',
   message: '',
+  room: 'room1',
+  date: '',
   toc: false,
 });
 
@@ -94,9 +116,19 @@ const errors = ref({
   firstname: '',
   email: '',
   phone: '',
+  room: '',
+  date: '',
   message: '',
   toc: '',
 });
+
+const rooms = ref([
+  { value: 'room1', label: 'Raum 1' },
+  { value: 'room2', label: 'Raum 2' },
+  { value: 'room3', label: 'Raum 3' },
+]);
+
+const minDate = ref(new Date().toISOString().split('T')[0]);
 
 const isSubmitting = ref(false);
 
@@ -104,7 +136,7 @@ async function submitForm() {
   isSubmitting.value = true;
   emit('form-reset');
   try {
-    const response = await axios.post('/api/contact-request/general', {
+    const response = await axios.post('/api/contact-request/room', {
       ...form.value,
       service: props.service
     });
@@ -124,6 +156,8 @@ function handleSuccess() {
     email: '',
     phone: '',
     message: '',
+    room: 'room1',
+    date_start: '',
     toc: false,
   };
   errors.value = {
@@ -132,6 +166,8 @@ function handleSuccess() {
     email: '',
     phone: '',
     message: '',
+    room: '',
+    date_start: '',
     toc: '',
   };
   isSubmitting.value = false;

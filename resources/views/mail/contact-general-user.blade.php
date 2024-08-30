@@ -4,9 +4,6 @@
   </div>
   <br>
   <div class="text-base pb-base">
-    <strong>Ihre Angaben:</strong>
-  </div>
-  <div class="text-base pb-base">
     <strong>Dienstleistung</strong><br>
     {{ $subject }}
   </div>

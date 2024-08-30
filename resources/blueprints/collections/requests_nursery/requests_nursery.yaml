@@ -1,0 +1,113 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: service
+            field:
+              type: text
+              display: Service
+          -
+            handle: name_parents
+            field:
+              type: text
+              display: 'Name der Eltern'
+          -
+            handle: street
+            field:
+              type: text
+              display: Strasse
+          -
+            handle: location
+            field:
+              type: text
+              display: PLZ/Ort
+          -
+            handle: email
+            field:
+              input_type: email
+              type: text
+              display: E-Mail
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+          -
+            handle: phone_business
+            field:
+              type: text
+              display: 'Telefon Geschäft'
+          -
+            handle: martial_status
+            field:
+              type: text
+              display: Zivilstand
+          -
+            handle: name_child
+            field:
+              type: text
+              display: 'Name des Kindes'
+          -
+            handle: gender
+            field:
+              type: text
+              display: Geschlecht
+          -
+            handle: citizenship
+            field:
+              type: text
+              display: Nationalität
+          -
+            handle: date_of_birth
+            field:
+              format: d.m.Y
+              type: date
+              display: Geburtsdatum
+          -
+            handle: care_days
+            field:
+              type: textarea
+              display: Betreuungstage
+          -
+            handle: care_days_flexible
+            field:
+              type: text
+              display: 'Flexible Betreuungstage'
+          -
+            handle: justification_urgency
+            field:
+              type: textarea
+              display: 'Begründung Dringlichkeit'
+          -
+            handle: previous_care_type
+            field:
+              type: textarea
+              display: 'Vorherige Betreuungsart'
+          -
+            handle: date_of_entry
+            field:
+              format: d.m.Y
+              type: date
+              display: Eintrittstermin
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+title: 'Anmeldungen (Chinderhuus)'

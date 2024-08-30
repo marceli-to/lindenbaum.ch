@@ -1,11 +1,11 @@
 <template>
   <div class="relative">
     <div :class="['flex checkboxes', { 'has-error': error }]">
-      <div class="flex items-start mr-15">
+      <div class="flex items-start mr-15 mt-2">
         <input id="toc" name="toc" type="checkbox" :checked="modelValue" @change="updateValue">
       </div>
       <label for="toc">
-        Ich habe die&nbsp;<a href="/datenschutz">Datenschutzerklärung</a>&nbsp;gelesen und akzeptiere diese.
+        Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen und akzeptiere diese.
       </label>
     </div>
   </div>

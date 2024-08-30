@@ -1,11 +1,11 @@
 <?php
-namespace App\Notifications;
+namespace App\Notifications\Contact;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class ContactUserEmail extends Notification
+class GeneralUserEmail extends Notification
 {
   use Queueable;
 
@@ -43,7 +43,7 @@ class ContactUserEmail extends Notification
       ->from(env('MAIL_FROM_ADDRESS'))
       ->replyTo(env('MAIL_TO'))
       ->subject('lindenbaum.ch – ' . $this->subject)
-      ->markdown('mail.contact-user', ['data' => $this->data, 'subject' => $this->subject]);
+      ->markdown('mail.contact-general-user', ['data' => $this->data, 'subject' => $this->subject]);
   }
 
   /**

@@ -7,8 +7,15 @@ tabs:
           -
             handle: title
             field:
-              type: hidden
-              required: false
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: service
+            field:
+              type: text
+              display: Service
           -
             handle: name
             field:
@@ -25,7 +32,18 @@ tabs:
               input_type: email
               type: text
               display: E-Mail
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+          -
+            handle: message
+            field:
+              type: textarea
+              display: Nachricht
   sidebar:
+    display: Sidebar
     sections:
       -
         fields:
@@ -35,4 +53,4 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
-title: 'Kontakt (Allgemein)'
+title: 'Anfragen (Generell)'

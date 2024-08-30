@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63bf869c00950cd6ce6ae2d834743498",
+    "content-hash": "3704f5a5552ca359560d7d565dae17c2",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -4209,6 +4209,44 @@
                 "source": "https://github.com/rhukster/dom-sanitizer/tree/1.0.7"
             },
             "time": "2023-11-06T16:46:48+00:00"
+        },
+        {
+            "name": "rias/statamic-collection-groups",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/riasvdv/statamic-collection-groups.git",
+                "reference": "0db50a2aaafe2d7d59b9287267f268312737c194"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/riasvdv/statamic-collection-groups/zipball/0db50a2aaafe2d7d59b9287267f268312737c194",
+                "reference": "0db50a2aaafe2d7d59b9287267f268312737c194",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "statamic": {
+                    "name": "Statamic Collection Groups",
+                    "description": "Group your collections into separate groups"
+                },
+                "laravel": {
+                    "providers": [
+                        "Rias\\CollectionGroups\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rias\\CollectionGroups\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "issues": "https://github.com/riasvdv/statamic-collection-groups/issues",
+                "source": "https://github.com/riasvdv/statamic-collection-groups/tree/v1.1.0"
+            },
+            "time": "2022-05-18T10:12:32+00:00"
         },
         {
             "name": "scrivo/highlight.php",

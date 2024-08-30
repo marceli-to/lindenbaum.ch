@@ -1,8 +1,9 @@
 <template>
   <div class="relative">
     <input
-      :type="type"
+      type="date"
       :value="modelValue"
+      :min="min"
       @input="$emit('update:modelValue', $event.target.value)"
       @focus="$emit('update:error', '')"
       :placeholder="placeholder"
@@ -34,6 +35,10 @@ const props = defineProps({
     type: String,
     default: ''
   },
+  min: {
+    type: String,
+    default: ''
+  }
 });
 
 defineEmits(['update:modelValue', 'update:error']);
