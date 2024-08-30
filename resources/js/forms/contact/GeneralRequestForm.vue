@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="submitForm">
+  <form>
     <form-group>
       <form-label id="name" label="Name" required />
       <form-text-field 
@@ -63,12 +63,16 @@
       />
     </form-group>
     <form-group classes="mt-30">
-      <form-button type="submit" label="Anfrage senden" />
+      <form-button 
+        type="submit" 
+        label="Anfrage senden" 
+        :disabled="isSubmitting" 
+        @click="handleSubmit"
+      />
     </form-group>
+
   </form>
 </template>
-
-
 <script setup>
 import { ref } from 'vue';
 import axios from 'axios';
@@ -106,7 +110,12 @@ const errors = ref({
   toc: '',
 });
 
+const isSubmitting = ref(false);
+
 async function submitForm() {
+
+
+
   emit('form-reset');
   try {
     const response = await axios.post('/api/contact/general', {
@@ -120,6 +129,12 @@ async function submitForm() {
     handleError(error);
     return false;
   }
+}
+
+function handleSubmit() {
+  isSubmitting.value = true;
+  submitForm();
+  isSubmitting.value = false;
 }
 
 function handleSuccess() {
@@ -152,10 +167,10 @@ function handleError(error) {
       errors.value[key] = error.response.data.errors[key][0];
     });
     emit('form-error');
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    // window.scrollTo({
+    //   top: 0,
+    //   behavior: 'smooth'
+    // });
   }
 }
 </script>
