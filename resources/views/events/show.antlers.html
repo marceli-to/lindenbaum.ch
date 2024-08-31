@@ -1,0 +1,12 @@
+{{ partial:layout/inner }}
+  <h1>{{ title }}</h1>
+  <article class="max-w-prose mb-50">
+    {{ content | markdown }}
+  </article>
+
+  {{ if has_form && max_participants > {{ collection:count in="requests_events" }} }}
+    <section id="event-forms" class="lg:w-1/2">
+      <event-registration :event-id="'{{ id }}'"></event-registration>
+    </section>
+  {{ /if }}
+{{ /partial:layout/inner }}

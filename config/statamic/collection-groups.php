@@ -16,7 +16,8 @@
  */
 return [
 
-  'Formulare' => [
+  'Anmeldungen' => [
+    'Events' => 'requests_events',
     'Allgemein' => 'requests_general',
     'Wohnen' => 'requests_general',
     'Wäscherei' => 'requests_general',

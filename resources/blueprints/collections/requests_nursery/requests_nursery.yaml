@@ -110,4 +110,4 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
-title: 'Anmeldungen (Chinderhuus)'
+title: 'Anmeldungen Chinderhuus'

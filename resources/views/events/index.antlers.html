@@ -1,0 +1,14 @@
+
+{{ page_elements }}
+  {{ partial:elements }}
+{{ /page_elements }}
+
+{{ partial:layout/inner }}
+{{ collection from="events" as="events" sort="order" }}
+  <div class="sm:grid sm:grid-cols-12 sm:gap-x-20">
+    {{ events }} 
+      {{ partial:events/teaser }}
+    {{ /events }}
+  </div>
+  {{ /collection }}
+{{ /partial:layout/inner }}

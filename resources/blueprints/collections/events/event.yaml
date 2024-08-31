@@ -1,0 +1,66 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              type: markdown
+              localizable: true
+              display: Inhalt
+  registration:
+    display: Anmeldung
+    sections:
+      -
+        display: 'Neuer Abschnitt'
+        fields:
+          -
+            handle: has_form
+            field:
+              type: toggle
+              display: 'Anmeldeformular?'
+          -
+            handle: max_participants
+            field:
+              input_type: number
+              type: text
+              display: 'Maximale Anzahl Teilnehmer'
+          -
+            handle: has_catering
+            field:
+              type: toggle
+              display: 'Verpflegungsanmeldung?'
+          -
+            handle: costs
+            field:
+              type: text
+              display: Kosten
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+  settings:
+    display: Einstellungen
+    sections:
+      -
+        display: 'Neuer Abschnitt'
+        fields:
+          -
+            import: settings
+title: Event

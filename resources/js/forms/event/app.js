@@ -1,9 +1,9 @@
 import { createApp } from 'vue';
-import ConferenceRegistration from './ConferenceRegistration.vue';
+import EventRegistration from './EventRegistration.vue';
 const app = createApp({});
 
-app.component('conference-registration', ConferenceRegistration);
+app.component('event-registration', EventRegistration);
 
-if (document.getElementById('app-forms')) {
-  app.mount('#app-forms');
+if (document.getElementById('event-forms')) {
+  app.mount('#event-forms');
 }
