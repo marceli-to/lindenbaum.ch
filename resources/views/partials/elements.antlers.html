@@ -38,6 +38,10 @@
   {{ partial:components/teaser/image_text }}
 {{ /if }}
 
+{{ if type == 'image_text' }}
+  {{ partial:components/misc/image_text }}
+{{ /if }}
+
 {{ if type == 'contact_form' }}
   {{ partial:forms/contact_forms }}
 {{ /if }}

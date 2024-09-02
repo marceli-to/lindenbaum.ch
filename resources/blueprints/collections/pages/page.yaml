@@ -41,6 +41,13 @@ tabs:
                       fields:
                         -
                           import: editor
+                    image_text:
+                      display: Bild/Text
+                      instructions: 'Bild/Text Element hinzufügen'
+                      icon: text-formatting-wrap-image-left
+                      fields:
+                        -
+                          import: image_text
                     teaser_image_text:
                       display: 'Bild/Text Teaser'
                       instructions: 'Teaser mit Bild/Button hinzufügen'

@@ -1,0 +1,20 @@
+{{ partial:layout/inner }}
+  <h2>{{ title }}</h2>
+  <article class="sm:grid sm:grid-cols-12 sm:gap-20 lg:gap-30">
+    <div class="sm:col-span-6 lg:col-span-5">
+    {{ partial:components/media/image 
+      :image="image" 
+      class="w-full h-auto object-cover"
+      preset="focal-16-10" }}
+    </div>
+    <div class="sm:col-span-6 lg:col-span-7">
+      {{ editor }}
+        {{ if type == 'button' }}
+          {{ partial:components/buttons/primary type="outline" }}
+        {{ else }}
+          {{ text }}
+        {{ /if }}
+      {{ /editor }}
+    </div>
+  </article>
+{{ /partial:layout/inner }}

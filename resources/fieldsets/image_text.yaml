@@ -1,0 +1,16 @@
+title: Bild/Text
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Titel
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Bild
+  -
+    import: editor
