@@ -1,6 +1,6 @@
 <nav class="text-xs text-steel flex uppercase relative">
   <div class="mt-80 w-[calc(50%_-_100px)]">
-    <ul class="flex justify-between">
+    <ul class="flex justify-start gap-x-30">
       {{ nav:main }}
         {{ if index < 3 }}
           {{ partial:menu/desktop/item }}
@@ -10,7 +10,7 @@
   </div>
   {{ partial:menu/home class="mt-20 mx-20" }}
   <div class="mt-80 w-[calc(50%_-_100px)]">
-    <ul class=" flex justify-between">
+    <ul class="flex justify-end gap-x-30">
       {{ nav:main }}
         {{ if index > 2 }}
           {{ partial:menu/desktop/item  }}
