@@ -43,7 +43,7 @@ tabs:
                           import: editor
                     teaser_image_text:
                       display: 'Bild/Text Teaser'
-                      instructions: 'Bild/Text Teaser hinzufügen'
+                      instructions: 'Teaser mit Bild/Button hinzufügen'
                       icon: text-formatting-image-left
                       fields:
                         -

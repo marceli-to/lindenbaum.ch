@@ -86,7 +86,30 @@
   @apply marker:text-sky
 }
 
+/* intro */
+.theme-general .intro .intro-line {
+  @apply bg-lemon
+}
 
+.theme-nursery .intro .intro-line {
+  @apply bg-amber
+}
+
+.theme-laundry .intro .intro-line {
+  @apply bg-sky
+}
+
+.theme-general .intro .intro-title {
+  @apply text-lemon
+}
+
+.theme-nursery .intro .intro-title {
+  @apply text-amber
+}
+
+.theme-laundry .intro .intro-title {
+  @apply text-sky
+}
 
 /* footer */
 .theme-general footer {
