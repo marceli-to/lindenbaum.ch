@@ -27,4 +27,39 @@ fields:
       type: assets
       display: Bild
   -
-    import: button
+    handle: button
+    field:
+      type: toggle
+      display: 'Button?'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+      instructions: 'Angezeigter Text'
+      if:
+        button: 'equals true'
+  -
+    handle: button_link
+    field:
+      collections:
+        - pages
+        - jobs
+        - events
+      container: assets
+      type: link
+      display: 'Button Link'
+      instructions: 'Link für Button'
+      if:
+        button: 'equals true'
+  -
+    handle: target
+    field:
+      options:
+        _self: 'Aktuelles Fenster'
+        _blank: 'Neues Fenster oder neuer Tab'
+      default: _self
+      type: select
+      display: 'Öffnen in...'
+      if:
+        button: 'equals true'

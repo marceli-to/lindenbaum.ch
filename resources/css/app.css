@@ -14,7 +14,7 @@ main {
 }
 
 main p {
-  @apply mb-15 md:mb-20
+  @apply mb-15 md:mb-20 lg:mb-25
 }
 
 main p:last-child {

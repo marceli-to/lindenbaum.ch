@@ -12,6 +12,10 @@
 }
 
 /* buttons */
+.btn-container + .btn-container {
+  @apply mt-15;
+}
+
 .theme-general .btn-outline {
   @apply hover:bg-lemon hover:border-lemon
 }

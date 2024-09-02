@@ -1,10 +1,6 @@
-{{ partial:layout/inner }}
-  {{ editor }}
-    {{ if type == 'button' }}
-      {{ partial:components/buttons/primary type="outline" }}
-    {{ else }}
-      {{ text }}
-    {{ /if }}
-  {{ /editor }}
-{{ /partial:layout/inner }}
+{{ if type == 'button' }}
+  {{ partial:components/buttons/primary type="outline" }}
+{{ else }}
+  {{ text }}
+{{ /if }}
 

@@ -1,4 +1,4 @@
-title: Akkordeon
+title: 'Akkordeon Zeile'
 fields:
   -
     handle: title
@@ -7,11 +7,13 @@ fields:
       display: Titel
       validate:
         - required
+      instructions: 'Titel zum ausklappen'
   -
     handle: subtitle
     field:
       type: text
       display: Subtitel
+      instructions: 'Optionaler Titel innerhalb Aufklapptext'
   -
     handle: text_left
     field:
@@ -25,6 +27,7 @@ fields:
       type: bard
       display: 'Text (links)'
       width: 50
+      toolbar_mode: floating
       sets:
         elements:
           display: Elemente

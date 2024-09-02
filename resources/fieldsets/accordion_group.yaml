@@ -1,0 +1,23 @@
+title: Akkordeon
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Titel
+  -
+    handle: item
+    field:
+      type: replicator
+      display: Zeile
+      sets:
+        neue_set-gruppe:
+          display: 'Neue Set-Gruppe'
+          sets:
+            accordion_line:
+              display: 'Akkordeon Zeile'
+              instructions: 'Akkordeon Zeile hinzufügen'
+              icon: form-drop-down-menu
+              fields:
+                -
+                  import: accordion

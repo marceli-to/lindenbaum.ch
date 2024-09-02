@@ -62,6 +62,13 @@ tabs:
                       fields:
                         -
                           import: news_section
+                    accordion:
+                      display: Akkordeon
+                      instructions: 'Akkordeon hinzufügen'
+                      icon: form-drop-down-menu
+                      fields:
+                        -
+                          import: accordion_group
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack

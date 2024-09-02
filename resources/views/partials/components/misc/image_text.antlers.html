@@ -9,11 +9,7 @@
     </div>
     <div class="sm:col-span-6 lg:col-span-7">
       {{ editor }}
-        {{ if type == 'button' }}
-          {{ partial:components/buttons/primary type="outline" }}
-        {{ else }}
-          {{ text }}
-        {{ /if }}
+        {{ partial:components/editor }}
       {{ /editor }}
     </div>
   </article>

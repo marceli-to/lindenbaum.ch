@@ -1,5 +1,11 @@
 {{ if type == 'editor' }}
-  {{ partial:components/editor }}
+  {{ partial:layout/inner }}
+  <div class="max-w-2xl">
+    {{ editor }}
+      {{ partial:components/editor }}
+    {{ /editor }}
+  </div>
+  {{ /partial:layout/inner }}
 {{ /if }}
 
 {{ if type == 'gallery' }}
@@ -40,6 +46,10 @@
 
 {{ if type == 'image_text' }}
   {{ partial:components/misc/image_text }}
+{{ /if }}
+
+{{ if type == 'accordion' }}
+  {{ partial:components/accordion/group }}
 {{ /if }}
 
 {{ if type == 'contact_form' }}

@@ -17,11 +17,7 @@
     <div class="md:w-[45%] mt-40 md:mt-0 px-20 md:pr-40 lg:pr-60 xl:pr-20">
       <div class="max-w-[440px]">
         {{ editor }}
-          {{ if type == 'button' }}
-            {{ partial:components/buttons/primary type="outline" }}
-          {{ else }}
-            {{ text }}
-          {{ /if }}
+          {{ partial:components/editor }}
         {{ /editor }}
       </div>
     </div>
