@@ -5,6 +5,20 @@ tabs:
       -
         fields:
           -
+            handle: image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Bild
+              folder: aktivitaeten
+          -
+            handle: event_date
+            field:
+              format: d.m.Y
+              type: date
+              display: Datum
+          -
             handle: title
             field:
               type: text
@@ -12,10 +26,23 @@ tabs:
               validate:
                 - required
           -
+            handle: summary
+            field:
+              type: textarea
+              display: Zusammenfassung
+              instructions: 'Wird auf Start- und Übersichtsseite verwendet.'
+          -
             handle: content
             field:
-              type: markdown
-              localizable: true
+              buttons:
+                - bold
+                - italic
+                - unorderedlist
+                - removeformat
+                - anchor
+              toolbar_mode: floating
+              remove_empty_nodes: true
+              type: bard
               display: Inhalt
   registration:
     display: Anmeldung
@@ -63,4 +90,12 @@ tabs:
         fields:
           -
             import: settings
+  seo:
+    display: SEO
+    sections:
+      -
+        display: 'Neuer Abschnitt'
+        fields:
+          -
+            import: seo
 title: Event

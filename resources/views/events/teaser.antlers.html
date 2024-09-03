@@ -1,4 +1,32 @@
-<article class="sm:col-span-6 md:col-span-4">
-  <h2>{{ title }}</h2>
-  <a href="{{ url }}">Mehr erfahren</a>
+<article class="mb-25 sm:mb-0 sm:col-span-6 md:col-span-4">
+  
+  {{ partial:components/media/image 
+    :image="image" 
+    class="w-full h-auto object-cover"
+    preset="focal-16-10" }}
+
+    <div class="mt-15 lg:mt-20">
+
+      <h3 class="text-md lg:text-lg leading-[1.15]">
+        {{ title }}
+      </h3>
+
+      {{ if event_date}}
+        <div class="font-bold mt-3">
+          {{ event_date | format('d.m.Y') }}
+        </div>
+      {{ /if }}
+
+      {{ if summary }}
+        <div class="mt-10 lg:mt-15">
+          {{ summary }}
+        </div>
+      {{ /if }}
+
+      {{ partial:components/buttons/primary 
+        type="outline" 
+        :button_link="url" 
+        :button_text="has_form ? 'Mehr und Anmeldung' : 'Mehr erfahren'"
+        wrapperClass="mt-15" }}
+    </div>
 </article>

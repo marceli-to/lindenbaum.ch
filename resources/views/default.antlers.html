@@ -9,16 +9,17 @@
     {{ /if }}
   </div>
 {{ else }}
-  <div class="absolute top-100 right-0 bg-red-100">
-    {{ if shortcut_jobs }}
-      {{ partial:components/misc/shortcut_jobs }}
-    {{ /if }}
-    {{ if shortcut_menu }}
-      {{ partial:components/misc/shortcut_menu }}
-    {{ /if }}
-  </div>
+  {{ if shortcut_jobs || shortcut_menu }}
+    <div class="absolute top-100 right-0 bg-red-100">
+      {{ if shortcut_jobs }}
+        {{ partial:components/misc/shortcut_jobs }}
+      {{ /if }}
+      {{ if shortcut_menu }}
+        {{ partial:components/misc/shortcut_menu }}
+      {{ /if }}
+    </div>
+  {{ /if }}
 {{ /if }}
-
 {{ page_elements }}
   {{ partial:elements }}
 {{ /page_elements }}
