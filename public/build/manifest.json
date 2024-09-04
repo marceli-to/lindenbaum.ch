@@ -4,6 +4,11 @@
     "isEntry": true,
     "src": "resources/css/app.css"
   },
+  "resources/css/map.css": {
+    "file": "assets/map-0996309c.css",
+    "isEntry": true,
+    "src": "resources/css/map.css"
+  },
   "resources/js/app.css": {
     "file": "assets/app-7430d6be.css",
     "src": "resources/js/app.css"

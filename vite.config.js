@@ -16,6 +16,7 @@ export default defineConfig({
       laravel({
           input: [
               'resources/css/app.css',
+              'resources/css/map.css',
               'resources/js/app.js',
               // Control Panel assets.
               // https://statamic.dev/extending/control-panel#adding-css-and-js-assets
