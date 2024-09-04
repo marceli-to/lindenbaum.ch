@@ -4,7 +4,7 @@
   <button 
     type="button" 
     class=" w-full pb-15 text-left"
-    @click="selected !== {{ index }} ? selected = {{ index }} : selected = null; setTimeout(() => { document.querySelector('[data-accordion-index=\'{{ index }}\']').scrollIntoView()}, 15);">
+    @click="selected !== {{ index }} ? selected = {{ index }} : selected = null;">
     <div class="flex items-center justify-between pr-0 lg:pr-15">
       <h3>
         {{ title }}
