@@ -1,12 +1,39 @@
 {{ partial:layout/inner }}
-  <h1>{{ title }}</h1>
-  <article class="max-w-prose mb-50">
-    {{ content | markdown }}
-  </article>
+  <h1 class="text-lemon text-3xl lg:text-4xl !mb-0">{{ title }}</h1>
+  {{ if event_date }}
+    <div class="text-xl lg:text-2xl font-bold mt-3">
+      {{ event_date | format('d. F Y') }}
+    </div>
+  {{ /if }}
+  <div class="mt-20 lg:mt-30 mb-30 lg:mb-60 sm:grid sm:grid-cols-12 sm:gap-x-20">
+    {{ partial:components/teaser/image class="sm:col-span-6 mb-40 sm:mb-0" direction="ltr" }}
+    <article class="sm:col-span-6">
+      {{ content }}
 
-  {{ if has_form && max_participants > {{ collection:count in="requests_events" }} }}
+        {{ if type == 'text' }}
+          {{ text }}
+        {{ /if }}
+
+        {{ if type == 'facts' }}
+        <div class="mt-15 max-w-md">
+          <table class="w-full border-collapse">
+            {{ facts }}
+              <tr>
+                <td class="font-bold align-top max-w-125 py-3">{{ fact_label }}</td>
+                <td class="align-top py-3">{{ fact_content }}</td>
+              </tr>
+            {{ /facts }}
+          </table>
+        </div>
+        {{ /if }}
+
+      {{ /content}}
+    </article>
+  </div>
+  {{ if has_form && max_participants > collection:count in="requests_events" }}
     <section id="event-forms" class="lg:w-1/2">
+      <h2>Anmeldung</h2>
       <event-registration :event-id="'{{ id }}'"></event-registration>
     </section>
-  {{ /if }}
+{{ /if }}
 {{ /partial:layout/inner }}

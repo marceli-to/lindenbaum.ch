@@ -44,6 +44,38 @@ tabs:
               remove_empty_nodes: true
               type: bard
               display: Inhalt
+              sets:
+                facts:
+                  display: Fakten
+                  instructions: 'Fakten hinzufügen'
+                  icon: file-content-list
+                  sets:
+                    facts:
+                      display: Informationen
+                      instructions: 'Informationen hinzufügen'
+                      fields:
+                        -
+                          handle: facts
+                          field:
+                            type: replicator
+                            display: Information
+                            sets:
+                              neue_set-gruppe:
+                                display: 'Neue Set-Gruppe'
+                                sets:
+                                  fact:
+                                    display: Information
+                                    fields:
+                                      -
+                                        handle: fact_label
+                                        field:
+                                          type: text
+                                          display: Label
+                                      -
+                                        handle: fact_content
+                                        field:
+                                          type: text
+                                          display: Inhalt
   registration:
     display: Anmeldung
     sections:

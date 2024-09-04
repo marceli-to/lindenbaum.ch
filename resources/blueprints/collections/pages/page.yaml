@@ -135,6 +135,13 @@ tabs:
                       fields:
                         -
                           import: map
+                    event_teaser:
+                      display: 'Aktivitäten (Vorschau)'
+                      instructions: 'Aktivitäten (Vorschau) hinzufügen'
+                      icon: dashboard-layout
+                      fields:
+                        -
+                          import: event_teaser
   media:
     display: Medien
     sections:

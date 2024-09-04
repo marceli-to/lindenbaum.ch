@@ -38,7 +38,7 @@
     <form-group classes="mt-30">
       <form-button 
         type="submit" 
-        label="Anfrage senden" 
+        label="Anmeldung abschicken" 
         :disabled="isSubmitting"
       />
     </form-group>

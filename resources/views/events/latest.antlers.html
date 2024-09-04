@@ -1,0 +1,18 @@
+{{ collection from="events" as="events" sort="event_date:desc" event_date:is_after="now" }}
+  {{ if events }}
+    {{ partial:layout/inner }}
+      <div class="sm:grid sm:grid-cols-12 sm:gap-x-20 sm:gap-y-30 lg:gap-y-60">
+        {{ events }} 
+          {{ partial:events/teaser button_text="Mehr" }}
+        {{ /events }}
+      </div>
+      <div class="flex justify-center">
+        {{ partial:components/buttons/primary 
+          type="filled" 
+          :button_link="'/aktivitaeten'" 
+          :button_text="'Alle aktivitäten'"
+          wrapperClass="mt-20 lg:mt-40" }}
+      </div>
+    {{ /partial:layout/inner }}
+  {{ /if }}
+{{ /collection }}

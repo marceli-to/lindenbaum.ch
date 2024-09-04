@@ -11,7 +11,7 @@
         {{ title }}
       </h3>
 
-      {{ if event_date}}
+      {{ if event_date }}
         <div class="font-bold mt-3">
           {{ event_date | format('d.m.Y') }}
         </div>
@@ -26,7 +26,7 @@
       {{ partial:components/buttons/primary 
         type="outline" 
         :button_link="url" 
-        :button_text="has_form ? 'Mehr und Anmeldung' : 'Mehr erfahren'"
+        :button_text="button_text ? button_text : (has_form ? 'Mehr und Anmeldung' : 'Mehr erfahren')"
         wrapperClass="mt-15" }}
     </div>
 </article>
