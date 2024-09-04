@@ -82,20 +82,3 @@ body.privacy main li:before {
 
 body.privacy main a {
 }
-
-.marker-lindenbaum,
-.marker-chinderhuus,
-.marker-waescheservice {
-  @apply bg-contain bg-no-repeat cursor-pointer h-28 w-80 lg:h-41 lg:w-120;
-}
-
-.marker-lindenbaum {
-
-  background-image: url('/resources/images/marker-lindenbaum.svg');
-}
-.marker-chinderhuus {
-  background-image: url('/resources/images/marker-chinderhuus.svg');
-}
-.marker-waescheservice {
-  background-image: url('/resources/images/marker-waescheservice.svg');
-}

@@ -6,7 +6,8 @@
     "coordinates": [{{ longitude }}, {{ latitude }}],
     "title": "{{ name }}",
     "description": "{{ description }}",
-    "markerClass": "{{ name | slugify }}"
+    "markerClass": "{{ section }}",
+    "section": "{{ section }}"
   }{{ unless last }},{{ /unless }}
 {{ /location }}
 ]'></div>

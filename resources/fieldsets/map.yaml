@@ -29,3 +29,13 @@ fields:
                   field:
                     type: text
                     display: Längengrad
+                -
+                  handle: section
+                  field:
+                    options:
+                      lindenbaum: Lindenbaum
+                      nursery: Chinderhuus
+                      laundry: Wäscherei
+                    default: lindenbaum
+                    type: select
+                    display: Bereich
