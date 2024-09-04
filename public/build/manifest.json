@@ -29,8 +29,13 @@
     "css": [
       "assets/app-7430d6be.css"
     ],
-    "file": "assets/app-37661d0e.js",
+    "file": "assets/app-e9908468.js",
     "isEntry": true,
     "src": "resources/js/app.js"
+  },
+  "resources/js/map.js": {
+    "file": "assets/map-57ac4826.js",
+    "isEntry": true,
+    "src": "resources/js/map.js"
   }
 }
