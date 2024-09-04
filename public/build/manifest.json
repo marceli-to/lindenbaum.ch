@@ -1,13 +1,25 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-15b51754.css",
+    "file": "assets/app-9964e2ad.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/css/map.css": {
-    "file": "assets/map-0996309c.css",
+    "file": "assets/map-eed61ad5.css",
     "isEntry": true,
     "src": "resources/css/map.css"
+  },
+  "resources/images/marker-chinderhuus.svg": {
+    "file": "assets/marker-chinderhuus-e6c05c70.svg",
+    "src": "resources/images/marker-chinderhuus.svg"
+  },
+  "resources/images/marker-lindenbaum.svg": {
+    "file": "assets/marker-lindenbaum-73676958.svg",
+    "src": "resources/images/marker-lindenbaum.svg"
+  },
+  "resources/images/marker-waescheservice.svg": {
+    "file": "assets/marker-waescheservice-e9cb4977.svg",
+    "src": "resources/images/marker-waescheservice.svg"
   },
   "resources/js/app.css": {
     "file": "assets/app-7430d6be.css",
@@ -17,7 +29,7 @@
     "css": [
       "assets/app-7430d6be.css"
     ],
-    "file": "assets/app-e9908468.js",
+    "file": "assets/app-37661d0e.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }

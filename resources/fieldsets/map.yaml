@@ -1,0 +1,31 @@
+title: Karte
+fields:
+  -
+    handle: location
+    field:
+      type: replicator
+      display: Standort
+      sets:
+        neue_set-gruppe:
+          display: 'Neue Set-Gruppe'
+          sets:
+            location:
+              display: Standort
+              instructions: 'Standort hinzufügen'
+              icon: travel-map
+              fields:
+                -
+                  handle: name
+                  field:
+                    type: text
+                    display: Name
+                -
+                  handle: latitude
+                  field:
+                    type: text
+                    display: Breitengrad
+                -
+                  handle: longitude
+                  field:
+                    type: text
+                    display: Längengrad

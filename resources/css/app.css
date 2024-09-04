@@ -83,8 +83,19 @@ body.privacy main li:before {
 body.privacy main a {
 }
 
+.marker-lindenbaum,
+.marker-chinderhuus,
+.marker-waescheservice {
+  @apply bg-contain bg-no-repeat cursor-pointer h-28 w-80 lg:h-41 lg:w-120;
+}
 
-/* Tests */
-.headline {
-  @apply flex text-3xl leading-none font-bold text-yellow-300 relative before:block before:absolute before:w-full before:h-5 before:content-[''] before:left-0 after:block after:absolute after:w-auto after:h-5 after:content-[''] after:left-0 before:bg-yellow-300 after:bg-yellow-300;
+.marker-lindenbaum {
+
+  background-image: url('/resources/images/marker-lindenbaum.svg');
+}
+.marker-chinderhuus {
+  background-image: url('/resources/images/marker-chinderhuus.svg');
+}
+.marker-waescheservice {
+  background-image: url('/resources/images/marker-waescheservice.svg');
 }

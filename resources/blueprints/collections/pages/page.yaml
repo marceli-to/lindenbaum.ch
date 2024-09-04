@@ -128,6 +128,13 @@ tabs:
                       fields:
                         -
                           import: contact_form
+                    map:
+                      display: Karte
+                      instructions: 'Karte hinzufügen'
+                      icon: travel-map
+                      fields:
+                        -
+                          import: map
   media:
     display: Medien
     sections:

@@ -1,0 +1,10 @@
+<div id="map" class="w-full min-h-[300px] md:min-h-[600px]" data-zoom="12" data-locations='[
+{{ location }}
+  {
+    "coordinates": [{{ longitude }}, {{ latitude }}],
+    "title": "{{ name }}",
+    "description": "{{ description }}",
+    "markerClass": "{{ name | slugify }}"
+  }{{ unless last }},{{ /unless }}
+{{ /location }}
+]'></div>
