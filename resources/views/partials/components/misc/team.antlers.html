@@ -12,6 +12,16 @@
           <div class="mt-10 lg:mt-20">
             <h3 class="text-md lg:text-lg mb-3">{{ name }}</h3>
             <strong>{{ role }}</strong>
+            {{ if email }}
+              <div>
+                <a href="mailto:{{ email }}">{{ email }}</a>
+              </div>
+            {{ /if }}
+            {{ if phone }}
+              <div>
+                <a href="tel:{{ phone }}">{{ phone }}</a>
+              </div>
+            {{ /if }}
           </div>
       </article>
     {{ /member}}

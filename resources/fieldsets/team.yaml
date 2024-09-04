@@ -41,3 +41,15 @@ fields:
                   field:
                     type: text
                     display: Funktion
+                -
+                  handle: email
+                  field:
+                    input_type: email
+                    type: text
+                    display: E-Mail
+                -
+                  handle: phone
+                  field:
+                    input_type: tel
+                    type: text
+                    display: Telefon
