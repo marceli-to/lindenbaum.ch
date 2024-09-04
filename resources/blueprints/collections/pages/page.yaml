@@ -115,6 +115,13 @@ tabs:
                       fields:
                         -
                           import: downloads
+                    media_downloads:
+                      display: 'Downloads (Bild/Text)'
+                      instructions: 'Downloads mit Bild und Text hinzufügen.'
+                      icon: download-arrow-down
+                      fields:
+                        -
+                          import: media_downloads
                     contact_form:
                       display: Kontaktformular
                       icon: form-text-field

@@ -40,6 +40,10 @@
   {{ partial:components/misc/downloads }}
 {{ /if }}
 
+{{ if type == 'media_downloads' }}
+  {{ partial:components/misc/media_downloads }}
+{{ /if }}
+
 {{ if type == 'news' }}
   {{ partial:components/misc/news }}
 {{ /if }}

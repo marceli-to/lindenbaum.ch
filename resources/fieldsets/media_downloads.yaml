@@ -1,0 +1,28 @@
+title: 'Downloads (Bild/Text)'
+fields:
+  -
+    handle: download
+    field:
+      type: replicator
+      display: Download
+      sets:
+        neue_set-gruppe:
+          display: 'Neue Set-Gruppe'
+          sets:
+            neues_set:
+              display: 'Neues Set'
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Bild
+                -
+                  handle: text
+                  field:
+                    type: textarea
+                    display: Text
+                -
+                  import: button
