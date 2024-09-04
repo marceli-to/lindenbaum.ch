@@ -31,3 +31,9 @@ fields:
               fields:
                 -
                   import: button
+            contact_box:
+              display: Kontaktbox
+              icon: phone-contact-phonebook
+              fields:
+                -
+                  import: contact_box

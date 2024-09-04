@@ -20,11 +20,14 @@ tabs:
             handle: text_left
             field:
               buttons:
+                - h1
+                - h2
                 - h3
                 - bold
                 - unorderedlist
                 - removeformat
                 - anchor
+                - nobr
               toolbar_mode: floating
               remove_empty_nodes: true
               type: bard
@@ -34,11 +37,14 @@ tabs:
             handle: text_right
             field:
               buttons:
+                - h1
+                - h2
                 - h3
                 - bold
                 - unorderedlist
                 - removeformat
                 - anchor
+                - nobr
               toolbar_mode: floating
               remove_empty_nodes: true
               type: bard

@@ -1,5 +1,7 @@
 {{ if type == 'button' }}
   {{ partial:components/buttons/primary type="outline" }}
+{{ elseif type == 'contact_box' }}
+  {{ partial:components/misc/contact-box class="max-w-sm" }}
 {{ else }}
   {{ text }}
 {{ /if }}

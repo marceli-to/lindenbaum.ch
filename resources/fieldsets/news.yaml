@@ -17,30 +17,4 @@ fields:
       type: assets
       display: Bild
   -
-    handle: has_contact_info
-    field:
-      type: toggle
-      display: 'Ansprechpartner:in?'
-  -
-    handle: name
-    field:
-      type: text
-      display: Name
-      if:
-        has_contact_info: 'equals true'
-  -
-    handle: phone
-    field:
-      input_type: tel
-      type: text
-      display: Telefon
-      if:
-        has_contact_info: 'equals true'
-  -
-    handle: email
-    field:
-      input_type: email
-      type: text
-      display: E-Mail
-      if:
-        has_contact_info: 'equals true'
+    import: contact_box
