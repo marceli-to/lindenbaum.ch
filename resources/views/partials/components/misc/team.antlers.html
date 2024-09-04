@@ -14,12 +14,20 @@
             <strong>{{ role }}</strong>
             {{ if email }}
               <div>
-                <a href="mailto:{{ email }}">{{ email }}</a>
+                <a 
+                  href="mailto:{{ email }}"
+                  class="hover:underline underline-offset-2 decoration-1">
+                  {{ email }}
+                </a>
               </div>
             {{ /if }}
             {{ if phone }}
               <div>
-                <a href="tel:{{ phone }}">{{ phone }}</a>
+                <a 
+                  href="tel:{{ phone }}"
+                  class="hover:underline underline-offset-2 decoration-1">
+                  {{ phone }}
+                </a>
               </div>
             {{ /if }}
           </div>
