@@ -1,10 +1,14 @@
 {{ if type == 'editor' }}
   {{ partial:layout/inner }}
-  <div class="max-w-2xl">
-    {{ editor }}
-      {{ partial:components/editor }}
-    {{ /editor }}
-  </div>
+    {{ if !has_columns }}
+      <div class="max-w-2xl">
+      {{ editor }}
+        {{ partial:components/editor/single }}
+      {{ /editor }}
+    </div>
+    {{ else }}
+      {{ partial:components/editor/columns }}
+    {{ /if }}
   {{ /partial:layout/inner }}
 {{ /if }}
 

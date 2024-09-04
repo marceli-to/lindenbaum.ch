@@ -1,6 +1,11 @@
 title: Editor
 fields:
   -
+    handle: has_columns
+    field:
+      type: toggle
+      display: '2 Spalten?'
+  -
     handle: editor
     field:
       buttons:
@@ -18,6 +23,84 @@ fields:
       display: Text
       container: assets
       localizable: true
+      unless:
+        has_columns: 'equals true'
+      sets:
+        special_elements:
+          display: Spezialelemente
+          instructions: 'Diverse Elemente'
+          icon: addon-boxes-stack
+          sets:
+            button:
+              display: Button
+              instructions: 'Button hinzufügen'
+              icon: link
+              fields:
+                -
+                  import: button
+            contact_box:
+              display: Kontaktbox
+              icon: phone-contact-phonebook
+              fields:
+                -
+                  import: contact_box
+  -
+    handle: editor_left
+    field:
+      buttons:
+        - h2
+        - h3
+        - bold
+        - unorderedlist
+        - removeformat
+        - anchor
+        - h1
+        - nobr
+      toolbar_mode: floating
+      remove_empty_nodes: true
+      type: bard
+      display: 'Text (links)'
+      width: 50
+      if:
+        has_columns: 'equals true'
+      sets:
+        special_elements:
+          display: Spezialelemente
+          instructions: 'Diverse Elemente'
+          icon: addon-boxes-stack
+          sets:
+            button:
+              display: Button
+              instructions: 'Button hinzufügen'
+              icon: link
+              fields:
+                -
+                  import: button
+            contact_box:
+              display: Kontaktbox
+              icon: phone-contact-phonebook
+              fields:
+                -
+                  import: contact_box
+  -
+    handle: editor_right
+    field:
+      buttons:
+        - h2
+        - h3
+        - bold
+        - unorderedlist
+        - removeformat
+        - anchor
+        - h1
+        - nobr
+      toolbar_mode: floating
+      remove_empty_nodes: true
+      type: bard
+      display: 'Text (rechts)'
+      width: 50
+      if:
+        has_columns: 'equals true'
       sets:
         special_elements:
           display: Spezialelemente

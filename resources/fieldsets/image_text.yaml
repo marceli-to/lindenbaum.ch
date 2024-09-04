@@ -1,6 +1,16 @@
 title: Bild/Text
 fields:
   -
+    handle: sequence
+    field:
+      options:
+        default: Bild/Text
+        mirror: Text/Bild
+      default: default
+      type: select
+      display: Abfolge
+      instructions: 'Reihenfolge Bild und Text'
+  -
     handle: title
     field:
       type: text
