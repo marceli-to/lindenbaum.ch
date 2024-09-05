@@ -13,26 +13,26 @@ export default defineConfig({
     }
   },
   plugins: [
-      laravel({
-          input: [
-              'resources/css/app.css',
-              'resources/css/map.css',
-              'resources/js/app.js',
-              'resources/js/map.js',
-              // Control Panel assets.
-              // https://statamic.dev/extending/control-panel#adding-css-and-js-assets
-              // 'resources/css/cp.css',
-              // 'resources/js/cp.js',
-          ],
-          refresh: true,
-      }),
-      vue({
-        template: {
-            transformAssetUrls: {
-                base: null,
-                includeAbsolute: false,
-            },
+    laravel({
+      input: [
+        'resources/css/app.css',
+        'resources/css/map.css',
+        'resources/js/app.js',
+        'resources/js/map.js',
+        // Control Panel assets.
+        // https://statamic.dev/extending/control-panel#adding-css-and-js-assets
+        // 'resources/css/cp.css',
+        // 'resources/js/cp.js',
+      ],
+      refresh: true,
+    }),
+    vue({
+      template: {
+        transformAssetUrls: {
+          base: null,
+          includeAbsolute: false,
         },
+      },
     }),
   ],
 });

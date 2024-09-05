@@ -1,6 +1,11 @@
 title: Benefits
 fields:
   -
+    handle: title
+    field:
+      type: text
+      display: Titel
+  -
     handle: benefit
     field:
       type: replicator
