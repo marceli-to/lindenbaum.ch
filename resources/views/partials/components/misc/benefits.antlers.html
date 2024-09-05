@@ -1,6 +1,8 @@
 <section class="bg-lemon">
 {{ partial:layout/inner class="!my-0 py-30 lg:py-50" }}
-  <h2>{{ title}}</h2>
+  {{ if title }}
+    <h2>{{ title}}</h2>
+  {{ /if }}
   <div class="grid grid-cols-12 lg:grid-cols-10 gap-20">
     {{ benefit }}
       <div class="col-span-6 md:col-span-4 lg:col-span-2">
