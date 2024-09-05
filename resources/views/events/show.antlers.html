@@ -2,7 +2,7 @@
   <h1 class="text-lemon text-3xl lg:text-4xl !mb-0">{{ title }}</h1>
   {{ if event_date }}
     <div class="text-xl lg:text-2xl font-bold mt-3">
-      {{ event_date | format('d. F Y') }}
+      {{ event_date iso_format="Do MMMM YYYY"}}
     </div>
   {{ /if }}
   <div class="mt-20 lg:mt-30 mb-30 lg:mb-60 sm:grid sm:grid-cols-12 sm:gap-x-20">
