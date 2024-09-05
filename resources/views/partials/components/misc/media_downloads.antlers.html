@@ -2,18 +2,20 @@
   <section class="sm:grid sm:grid-cols-12 sm:gap-x-20 sm:gap-y-30 lg:gap-y-40">
     {{ download }}
       <article class="mb-30 sm:mb-0 sm:col-span-4 md:col-span-3">
-        {{ partial:components/media/image class="max-w-[240px] sm:max-w-none w-full mb-10 lg:mb-15" }}
-        {{ if text }}
-          <div class="mb-10 lg:mb-15 hyphens-auto">
-            {{ text }}
-          </div>
-        {{ /if }}
-        <div>
-        {{ partial:components/buttons/primary 
-            type="outline" 
-            target="_blank"
-            class="mb-12" }}
-        </div>
+        <a 
+          href="{{ file }}" 
+          title="{{ title ?? 'Download' }}" 
+          target="_blank">
+          {{ partial:components/media/image class="max-w-[240px] sm:max-w-none w-full mb-10 lg:mb-15" }}
+          {{ if title }}
+            <h3>{{ title }}</h3>
+          {{ /if }}
+          {{ if text }}
+            <div class="mb-10 lg:mb-15 hyphens-auto">
+              {{ text }}
+            </div>
+          {{ /if }}
+        </a>
       </article>
     {{ /download }}
   </section>

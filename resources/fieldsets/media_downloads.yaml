@@ -20,9 +20,20 @@ fields:
                     type: assets
                     display: Bild
                 -
+                  handle: title
+                  field:
+                    type: text
+                    display: Titel
+                -
                   handle: text
                   field:
                     type: textarea
                     display: Text
                 -
-                  import: button
+                  handle: file
+                  field:
+                    max_files: 1
+                    container: assets
+                    folder: downloads
+                    type: assets
+                    display: Datei
