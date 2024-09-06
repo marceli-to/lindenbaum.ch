@@ -41,7 +41,7 @@ const initMap = () => {
     new mapboxgl.Marker(el)
       .setLngLat(marker.geometry.coordinates)
       .setPopup(new mapboxgl.Popup({ offset: 25, className: "mapboxgl-popup--" + marker.properties.markerClass }) // add popups
-     .setHTML('<h3>' + marker.properties.title + '</h3>'))
+      .setHTML('<h3>' + marker.properties.title + '</h3>'))
       .addTo(map);
   });
 
