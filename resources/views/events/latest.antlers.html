@@ -1,6 +1,6 @@
 {{ collection from="events" as="events" sort="event_date:desc" event_date:is_after="now" }}
   {{ if events }}
-    {{ partial:layout/inner }}
+    {{ partial:layout/inner has_reveal="true" }}
       <div class="sm:grid sm:grid-cols-12 sm:gap-x-20 sm:gap-y-30 lg:gap-y-60">
         {{ events }} 
           {{ partial:events/teaser button_text="Mehr" }}

@@ -2,7 +2,6 @@
 <html 
   lang="{{ site:short_locale }}" 
   class="scroll-smooth overflow-y-auto {{ page_class ?? '' }} theme-{{ page_theme }}"
-  :class="{ '!overflow-y-hidden': menu === true}"
   x-data="{ menu: false, submenu: null }">
 <head>
 <meta charset="utf-8">
@@ -31,3 +30,8 @@
 {{ livewire:styles }}
 </head>
 {{# {{ partial:layout/debug }} #}}
+<noscript>
+  <style>
+    [data-reveal="fade-in"] { visibility: visible; opacity: 100; }
+  </style>
+</noscript>

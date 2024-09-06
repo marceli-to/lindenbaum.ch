@@ -9,6 +9,8 @@
 
 [x-cloak] { display: none !important; }
 
+[data-reveal="fade-in"] { visibility: hidden; }
+
 main {
   @apply flex-1;
 }
@@ -16,10 +18,6 @@ main {
 main p {
   @apply mb-15 md:mb-20 lg:mb-25
 }
-
-/* main p:last-child {
-  @apply mb-0;
-} */
 
 main ul {
   @apply list-disc m-0 ml-16 mb-15 md:mb-20 lg:mb-25;

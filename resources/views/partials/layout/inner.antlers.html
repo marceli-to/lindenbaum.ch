@@ -1,3 +1,8 @@
-<div class="px-25 xl:px-40 max-w-6xl mx-auto my-30 lg:my-50 xl:my-70 {{ class }}">
+<div 
+  class="px-25 xl:px-40 max-w-6xl mx-auto my-30 lg:my-50 xl:my-70 {{ class }}"
+  {{ if has_reveal }}
+    data-reveal="fade-in"
+  {{ /if }}
+  >
   {{ slot }}
 </div>
