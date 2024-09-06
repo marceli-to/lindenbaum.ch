@@ -34,6 +34,5 @@ fields:
                   field:
                     max_files: 1
                     container: assets
-                    folder: downloads
                     type: assets
                     display: Datei
