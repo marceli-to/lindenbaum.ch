@@ -3,7 +3,7 @@
 .marker-lindenbaum,
 .marker-nursery,
 .marker-laundry {
-  @apply bg-contain bg-no-repeat cursor-pointer h-28 w-80 lg:h-41 lg:w-120;
+  @apply bg-contain bg-no-repeat cursor-pointer h-40 w-29 lg:h-50 lg:w-37;
 }
 
 .marker-lindenbaum {
