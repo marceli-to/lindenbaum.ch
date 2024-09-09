@@ -20,4 +20,10 @@ fields:
                     type: text
                     display: Zeile
   -
+    handle: is_short
+    field:
+      type: toggle
+      display: 'Kurzer Titel?'
+      instructions: 'Verhindert zu grosse Abstände zwischen Titel und Text (ca. 8 Zeichen pro Zeile)'
+  -
     import: editor

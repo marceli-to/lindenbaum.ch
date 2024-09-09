@@ -4,7 +4,7 @@ fields:
     handle: has_columns
     field:
       type: toggle
-      display: '2 Spalten?'
+      display: '2-spaltiger Text?'
   -
     handle: editor
     field:

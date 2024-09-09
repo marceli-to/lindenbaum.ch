@@ -55,6 +55,10 @@ export default {
         '2xl': '1.5625rem', // 25px
         '3xl': '1.875rem', // 32px
         '4xl': '2.5rem', // 52px
+
+        // title (intro)
+        'title-lg': '2.375rem', // 38px
+        'title-xl': '3.75rem' // 60px
       },
       
       zIndex: {
