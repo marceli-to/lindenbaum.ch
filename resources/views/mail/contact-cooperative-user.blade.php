@@ -24,7 +24,7 @@
     {{ date('d.m.Y', strtotime($data['date_of_birth'])) }}
   </div>
   <div class="text-base pb-base">
-    <strong>Email</strong><br>
+    <strong>E-Mail</strong><br>
     {{ $data['email'] }}
   </div>
   <div class="text-base pb-base">

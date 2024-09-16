@@ -210,3 +210,15 @@ table.header__content {
 .pb-xlarge {
   padding-bottom: 30px;
 }
+
+.pt-base {
+  padding-top: 15px;
+}
+
+.pt-large {
+  padding-top: 20px;
+}
+
+.pt-xlarge {
+  padding-top: 30px;
+}

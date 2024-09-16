@@ -3,9 +3,10 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
 use Statamic\Facades\Entry;
 use Illuminate\Support\Facades\Notification;
+use App\Notifications\Event\UserConfirmation;
+use App\Notifications\Event\OwnerNotification;
 
 class EventController extends Controller
 {
@@ -44,18 +45,20 @@ class EventController extends Controller
       return $validationResult;
     }
 
+    $data = [
+      'title' => $event->title,
+      'name' => $request->input('name') ?? null,
+      'firstname' => $request->input('firstname') ?? null,
+      'email' => $request->input('email') ?? null,
+      'phone' => $request->input('phone') ?? null,
+      'remarks' => $request->input('remarks') ?? null,
+      'meal_options' => $event->has_meal_options ? $request->input('meal_options') : null,
+    ];
+
     $entry = Entry::make()
       ->collection('requests_events')
       ->slug($event->title . '-' . uniqid())
-      ->data([
-        'title' => $event->title,
-        'name' => $request->input('name') ?? null,
-        'firstname' => $request->input('firstname') ?? null,
-        'email' => $request->input('email') ?? null,
-        'phone' => $request->input('phone') ?? null,
-        'remarks' => $request->input('remarks') ?? null,
-        'meal_options' => $request->input('wants_meal_options') != "false" && $request->input('meal_options') ? $request->input('meal_options') : 'ohne Essen',
-      ])
+      ->data($data)
       ->save();
 
     // handle additional individuals
@@ -69,17 +72,25 @@ class EventController extends Controller
           'firstname' => '–',
           'name' => $individual['name'],
           'email' => $individual['email'] ?? '–',
-          'meal_options' => $individual['meal_options'] ?? 'ohne Essen',
+          'meal_options' => $event->has_meal_options ? $individual['meal_options'] : null,
           'remarks' => 'Begleitperson von ' . $request->input('firstname') . ' ' . $request->input('name'),
         ])
         ->save();
+
+      $data['additional_individuals'][] = [
+        'name' => $individual['name'],
+        'email' => $individual['email'] ?? null,
+        'meal_options' => $event->has_meal_options && empty($individual['meal_options']) ? 'ohne Essen'  : $individual['meal_options'],
+      ];
     }
 
-      
-    // Notification::route('mail', $request->input('email'))->notify(new GeneralUserEmail(
-    //   $request->input('service'),
-    //   $request->validated()
-    // ));
+    // Send confirmation email to user
+    Notification::route('mail', $request->input('email'))
+      ->notify(new UserConfirmation($event, $data));
+
+    // Send notification email to owner
+    Notification::route('mail', env('MAIL_TO'))
+      ->notify(new OwnerNotification($event, $data));
 
     return response()->json(['message' => 'Store successful']);
   }
