@@ -80,7 +80,8 @@ tabs:
     display: Anmeldung
     sections:
       -
-        display: 'Neuer Abschnitt'
+        display: Anmeldeformular
+        instructions: 'Definiere welche Felder für diesen Anlass benötigt werden'
         fields:
           -
             handle: has_form
@@ -93,16 +94,188 @@ tabs:
               input_type: number
               type: text
               display: 'Maximale Anzahl Teilnehmer'
+              instructions: 'Ist die max. Anzahl Teilnehmer erreicht, wird das Formular nicht mehr angezeigt.'
+              instructions_position: below
+              width: 50
+              if:
+                has_form: 'equals true'
           -
-            handle: has_catering
+            handle: cost
             field:
-              type: toggle
-              display: 'Verpflegungsanmeldung?'
-          -
-            handle: costs
-            field:
+              input_type: number
               type: text
               display: Kosten
+              width: 50
+              if:
+                has_form: 'equals true'
+          -
+            handle: contact_information
+            field:
+              type: section
+              display: Kontaktinformationen
+              if:
+                has_form: 'equals true'
+              instructions: 'Feldauswahl für persönliche Daten'
+          -
+            handle: has_firstname
+            field:
+              type: toggle
+              display: 'Feld "Vorname"'
+              width: 66
+              if:
+                has_form: 'equals true'
+              default: true
+          -
+            handle: requires_firstname
+            field:
+              type: toggle
+              display: Pflichtfeld
+              width: 33
+              if:
+                has_firstname: 'equals true'
+                has_form: 'equals true'
+              default: true
+          -
+            handle: has_name
+            field:
+              type: toggle
+              display: 'Feld "Name"'
+              width: 66
+              if:
+                has_form: 'equals true'
+              default: true
+          -
+            handle: requires_name
+            field:
+              type: toggle
+              display: Pflichtfeld
+              width: 33
+              if:
+                has_name: 'equals true'
+                has_form: 'equals true'
+              default: true
+          -
+            handle: has_phone
+            field:
+              type: toggle
+              display: 'Feld "Telefon"'
+              width: 66
+              if:
+                has_form: 'equals true'
+              default: true
+          -
+            handle: requires_phone
+            field:
+              type: toggle
+              display: Pflichtfeld
+              width: 33
+              if:
+                has_phone: 'equals true'
+                has_form: 'equals true'
+              default: true
+          -
+            handle: has_email
+            field:
+              type: toggle
+              display: 'Feld "E-Mail"'
+              width: 66
+              if:
+                has_form: 'equals true'
+              default: true
+          -
+            handle: requires_email
+            field:
+              type: toggle
+              display: Pflichtfeld
+              width: 33
+              if:
+                has_email: 'equals true'
+                has_form: 'equals true'
+              default: true
+          -
+            handle: has_remarks
+            field:
+              type: toggle
+              display: 'Feld "Bemerkungen"'
+              if:
+                has_form: 'equals true'
+          -
+            handle: meal_options
+            field:
+              type: section
+              display: Verpflegung
+              instructions: 'Verpflegung aktivieren und definieren'
+              if:
+                has_form: 'equals true'
+          -
+            handle: has_meal_options
+            field:
+              type: toggle
+              display: Aktivieren
+              if:
+                has_form: 'equals true'
+          -
+            handle: has_meal_option_meat
+            field:
+              default: true
+              type: toggle
+              display: 'Option "Fleisch"'
+              width: 50
+              if:
+                has_form: 'equals true'
+                has_meal_options: 'equals true'
+          -
+            handle: has_meal_option_vegetarian
+            field:
+              default: true
+              type: toggle
+              display: 'Option "Vegetarisch"'
+              width: 50
+              if:
+                has_form: 'equals true'
+                has_meal_options: 'equals true'
+          -
+            handle: additional_individuals
+            field:
+              type: section
+              display: 'Zusätzliche Teilnehmer'
+              instructions: 'Hinzufügen weiterer Personen ermöglichen'
+              if:
+                has_form: 'equals true'
+          -
+            handle: has_button_additional_individuals
+            field:
+              type: toggle
+              display: Aktivieren
+              if:
+                has_form: 'equals true'
+          -
+            handle: has_field_additional_individual_firstname
+            field:
+              type: toggle
+              display: 'Feld "Vorname"'
+              width: 50
+              if:
+                has_form: 'equals true'
+                has_button_additional_individuals: 'equals true'
+          -
+            handle: has_field_additional_individual_name
+            field:
+              type: toggle
+              display: 'Feld "Name"'
+              width: 50
+              if:
+                has_form: 'equals true'
+                has_button_additional_individuals: 'equals true'
+          -
+            handle: has_field_additional_individual_email
+            field:
+              type: toggle
+              display: 'Feld "E-Mail"'
+              width: 50
+              if:
+                has_form: 'equals true'
+                has_button_additional_individuals: 'equals true'
   sidebar:
     display: Sidebar
     sections:

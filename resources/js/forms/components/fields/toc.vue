@@ -5,7 +5,7 @@
         <input id="toc" name="toc" type="checkbox" :checked="modelValue" @change="updateValue">
       </div>
       <label for="toc">
-        Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen und akzeptiere diese.
+        Ich habe die <a href="/datenschutz" title="Datenschutzerklärung" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere diese.
       </label>
     </div>
   </div>

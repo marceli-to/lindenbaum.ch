@@ -30,7 +30,7 @@
       {{ /content}}
     </article>
   </div>
-  {{ if has_form && max_participants > collection:count in="requests_events" }}
+  {{ if has_form || (has_form && max_participants > 0 && max_participants > {collection:count in="requests_events"}) }}
     <section id="event-forms" class="lg:w-1/2">
       <h2>Anmeldung</h2>
       <event-registration :event-id="'{{ id }}'"></event-registration>

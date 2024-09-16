@@ -12,9 +12,24 @@ class EventController extends Controller
     $event = Entry::find($eventId);
     return response()->json([
       'title' => $event->title,
-      'max_participants' => $event->max_participants,
-      'has_catering' => $event->has_catering,
-      'costs' => $event->costs,
+      'has_name' => $event->has_name,
+      'requires_name' => $event->requires_name,
+      'has_firstname' => $event->has_firstname,
+      'requires_firstname' => $event->requires_firstname,
+      'has_email' => $event->has_email,
+      'requires_email' => $event->requires_email,
+      'has_phone' => $event->has_phone,
+      'requires_phone' => $event->requires_phone,
+      'has_remarks' => $event->has_remarks,
+      'has_meal_options' => $event->has_meal_options,
+      'meal_options' => [
+        'Fleisch' => $event->has_meal_option_meat ? __('Fleisch') : null,
+        'Vegetarisch' => $event->has_meal_option_vegetarian ? __('Vegetarisch') : null,
+      ],
+      'has_button_additional_individuals' => $event->has_button_additional_individuals,
+      'has_field_additional_individual_email' => $event->has_field_additional_individual_email,
+      'has_field_additional_individual_name' => $event->has_field_additional_individual_name,
+      'has_field_additional_individual_firstname' => $event->has_field_additional_individual_firstname,
     ]);
   }
 
