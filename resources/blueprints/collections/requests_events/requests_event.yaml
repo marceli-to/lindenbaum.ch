@@ -12,12 +12,6 @@ tabs:
               validate:
                 - required
           -
-            handle: event_id
-            field:
-              type: text
-              display: 'Event ID'
-              visibility: hidden
-          -
             handle: name
             field:
               type: text
@@ -48,11 +42,6 @@ tabs:
             field:
               type: textarea
               display: Bemerkungen
-          -
-            handle: additional_individuals
-            field:
-              type: textarea
-              display: 'Zusätzliche Teilnehmer'
   sidebar:
     display: Sidebar
     sections:

@@ -38,49 +38,43 @@ class EventController extends Controller
   {
     $event = Entry::find($request->input('event_id'));
     $validationResult = $this->validateRequest($request, $event);
+
     if ($validationResult !== TRUE)
     {
       return $validationResult;
     }
 
-    $slug = $event->title . '-' . uniqid();
-
-    // build data
-    $data = [
-      'title' => $event->title,
-      'event_id' => $event->id,
-      'name' => $request->input('name') ?? null,
-      'firstname' => $request->input('firstname') ?? null,
-      'email' => $request->input('email') ?? null,
-      'phone' => $request->input('phone') ?? null,
-      'remarks' => $request->input('remarks') ?? null,
-      'meal_options' => $request->input('wants_meal_options') != "false" && $request->input('meal_options') ? $request->input('meal_options') : 'ohne Essen',
-    ];
-
-    // handle additional individuals, build a string out of:
-    // name, firstname and meal_options (if available)
-    $additional_individuals = [];
-    foreach ($request->input('additional_individuals') as $additional_individual)
-    {
-      // create an array with salutation, email, name, firstname and meal_options
-      $additional_individual_data = [
-        'name' => $additional_individual['name'],
-        'email' => $additional_individual['email'] ?? null,
-        'meal_options' => $additional_individual['meal_options'] ?? 'ohne Essen',
-      ];
-
-      // create comma separated string
-      $additional_individuals[] = implode(', ', array_filter($additional_individual_data));
-    }
-
-    // add newline instead of comma
-    $data['additional_individuals'] = implode("\n", $additional_individuals);
-
     $entry = Entry::make()
       ->collection('requests_events')
-      ->slug($slug)
-      ->data($data)
+      ->slug($event->title . '-' . uniqid())
+      ->data([
+        'title' => $event->title,
+        'name' => $request->input('name') ?? null,
+        'firstname' => $request->input('firstname') ?? null,
+        'email' => $request->input('email') ?? null,
+        'phone' => $request->input('phone') ?? null,
+        'remarks' => $request->input('remarks') ?? null,
+        'meal_options' => $request->input('wants_meal_options') != "false" && $request->input('meal_options') ? $request->input('meal_options') : 'ohne Essen',
+      ])
       ->save();
+
+    // handle additional individuals
+    foreach ($request->input('additional_individuals') as $individual)
+    {
+      Entry::make()
+        ->collection('requests_events')
+        ->slug($event->title . '-' . uniqid())
+        ->data([
+          'title' => $event->title,
+          'firstname' => '–',
+          'name' => $individual['name'],
+          'email' => $individual['email'] ?? '–',
+          'meal_options' => $individual['meal_options'] ?? 'ohne Essen',
+          'remarks' => 'Begleitperson von ' . $request->input('firstname') . ' ' . $request->input('name'),
+        ])
+        ->save();
+    }
+
       
     // Notification::route('mail', $request->input('email'))->notify(new GeneralUserEmail(
     //   $request->input('service'),
@@ -155,10 +149,6 @@ class EventController extends Controller
         $validationRules['additional_individuals.*.name'] = 'required';
       }
 
-      if ($event->has_field_additional_individual_firstname) {
-        $validationRules['additional_individuals.*.firstname'] = 'required';
-      }
-
       if ($event->has_field_additional_individual_email) {
         $validationRules['additional_individuals.*.email'] = 'required|email|regex:/^[^\s@]+@[^\s@]+\.[^\s@]+$/';
       }
@@ -186,7 +176,6 @@ class EventController extends Controller
       'meal_options.required' => __('Essen ist erforderlich'),
       'wants_meal_options.required' => __('Angabe ist erforderlich'),
       'additional_individuals.*.name.required' => __('Name ist erforderlich'),
-      'additional_individuals.*.firstname.required' => __('Vorname ist erforderlich'),
       'additional_individuals.*.email.required' => __('E-Mail-Adresse ist erforderlich'),
       'additional_individuals.*.email.email' => __('E-Mail-Adresse muss gültig sein'),
       'additional_individuals.*.email.regex' => __('E-Mail-Adresse muss gültig sein'),
