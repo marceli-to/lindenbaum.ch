@@ -46,7 +46,7 @@
     <template v-if="hasMealOptions">
       <form-group>
         <label class="block font-bold mb-10 xl:mb-15">Verpflegung</label>
-        <div class="flex gap-x-20 lg:gap-x-30 items-center mt-3 lg:mt-10 relative">
+        <div class="flex gap-x-10 lg:gap-x-20 items-center mt-3 lg:mt-10 relative">
           <form-radio-field 
             v-model="form.wants_meal_options" 
             :id="'wants_meal_options_yes'"
@@ -83,7 +83,7 @@
 
     <template v-if="hasButtonAdditionalIndividuals">
       <div>
-        <h3 class="mt-15 xl:mt-30 mb:15 xl:mb-25">Weitere Person(en)</h3>
+        <h3 class="mt-15 xl:mt-30 mb:15 xl:mb-25">Begleitperson(en)</h3>
         <form-group v-for="(individual, index) in additionalIndividuals" :key="index">
           <AdditionalIndividual
             :hasEmail="hasFieldAdditionalIndividualEmail"
@@ -95,6 +95,7 @@
             :hasMealOptions="hasMealOptions"
             :requiresMealOptions="requiresMealOptions"
             :mealOptions="mealOptions"
+            :numberOfIndividuals="additionalIndividuals.length"
             :errors="errors.additional_individuals ? errors.additional_individuals[index] : {}"
             @update:individual="updateAdditionalIndividual(index, $event)"
           />
@@ -103,7 +104,7 @@
               href="javascript:;" 
               @click.prevent="removeAdditionalIndividual(index)" 
               class="inline-block text-xs xl:text-sm group">
-              <span class="underline underline-offset-4 decoration-1 group-hover:no-underline">Person Entfernen</span>
+              <span class="underline underline-offset-4 decoration-1 group-hover:no-underline">Begleitperson Entfernen</span>
             </a>
           </div>
         </form-group>
@@ -113,7 +114,7 @@
             @click.prevent="addAdditionalIndividual" 
             class="inline-block group"
           >
-            + <span class="underline underline-offset-4 decoration-1 group-hover:no-underline">Weitere Person hinzufügen</span>
+            + <span class="underline underline-offset-4 decoration-1 group-hover:no-underline">Begleitperson hinzufügen</span>
           </a>
         </form-group>
       </div>
@@ -245,8 +246,6 @@ onMounted(async () => {
     hasButtonAdditionalIndividuals.value = response.data.has_button_additional_individuals;
     hasFieldAdditionalIndividualEmail.value = response.data.has_field_additional_individual_email;
     hasFieldAdditionalIndividualName.value = response.data.has_field_additional_individual_name;
-    hasFieldAdditionalIndividualFirstname.value = response.data.has_field_additional_individual_firstname;
-    hasFieldAdditionalIndividualCostCenter.value = response.data.has_field_additional_individual_cost_center;
 
   } catch (error) {
     console.error(error);
@@ -279,8 +278,7 @@ watch(additionalIndividuals, (newValue) => {
 function addAdditionalIndividual() {
   additionalIndividuals.value.push({
     email: null,
-    name: null,
-    firstname: null,
+    name: 'Begleitperson',
     wants_meal_options: null,
     meal_options: null,
   });

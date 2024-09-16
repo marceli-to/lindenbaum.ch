@@ -1,13 +1,5 @@
 <template>
   <div>
-    <form-group v-if="hasFirstname">
-      <form-label id="firstname" :label="'Vorname'" :required="requiresFirstname" />
-      <form-text-field 
-        v-model="individual.firstname" 
-        :error="errors.firstname"
-        @update:error="errors.firstname = $event"
-      />
-    </form-group>
     <form-group v-if="hasName">
       <form-label id="name" :label="'Name'" :required="requiresName" />
       <form-text-field 
@@ -27,7 +19,7 @@
     <template v-if="hasMealOptions">
       <form-group>
         <label class="block font-bold mb-10 xl:mb-15">Verpflegung</label>
-        <div class="flex gap-x-20 lg:gap-x-30 items-center mt-3 lg:mt-10 relative">
+        <div class="flex gap-x-15 lg:gap-x-20 items-center mt-3 lg:mt-10 relative">
           <form-radio-field 
             v-model="individual.wants_meal_options" 
             :id="'individual_wants_meal_options_yes'"
@@ -84,6 +76,7 @@ const props = defineProps({
   hasEmail: Boolean,
   requiresEmail: Boolean,
   mealOptions: Array,
+  numberOfIndividuals: Number,
   errors: {
     type: Object,
     default: () => ({})
@@ -93,8 +86,7 @@ const props = defineProps({
 const emit = defineEmits(['update:individual']);
 const individual = ref({
   email: null,
-  name: null,
-  firstname: null,
+  name: 'Begleitperson ' + props.numberOfIndividuals,
   wants_meal_options: null,
   meal_options: null,
 });

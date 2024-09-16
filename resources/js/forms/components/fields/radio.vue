@@ -1,5 +1,5 @@
 <template>
-  <div :class="['flex gap-x-15 checkboxes', { 'has-error': error }]">
+  <div :class="['flex gap-x-10 checkboxes', { 'has-error': error }]">
     <input 
       :id="id" 
       :name="name" 

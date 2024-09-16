@@ -238,8 +238,8 @@ tabs:
             handle: additional_individuals
             field:
               type: section
-              display: 'Zusätzliche Teilnehmer'
-              instructions: 'Hinzufügen weiterer Personen ermöglichen'
+              display: Begleitpersonen
+              instructions: 'Hinzufügen von Begleitpersonen ermöglichen'
               if:
                 has_form: 'equals true'
           -
@@ -249,15 +249,6 @@ tabs:
               display: Aktivieren
               if:
                 has_form: 'equals true'
-          -
-            handle: has_field_additional_individual_firstname
-            field:
-              type: toggle
-              display: 'Feld "Vorname"'
-              width: 50
-              if:
-                has_form: 'equals true'
-                has_button_additional_individuals: 'equals true'
           -
             handle: has_field_additional_individual_name
             field:

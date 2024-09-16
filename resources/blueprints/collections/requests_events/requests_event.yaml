@@ -12,11 +12,6 @@ tabs:
               validate:
                 - required
           -
-            handle: event_title
-            field:
-              type: text
-              display: Event
-          -
             handle: event_id
             field:
               type: text
@@ -38,6 +33,26 @@ tabs:
               input_type: email
               type: text
               display: E-Mail
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+          -
+            handle: meal_options
+            field:
+              type: text
+              display: Verpflegungswunsch
+          -
+            handle: remarks
+            field:
+              type: textarea
+              display: Bemerkungen
+          -
+            handle: additional_individuals
+            field:
+              type: textarea
+              display: 'Zusätzliche Teilnehmer'
   sidebar:
     display: Sidebar
     sections:

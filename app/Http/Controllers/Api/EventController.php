@@ -25,28 +25,21 @@ class EventController extends Controller
       'has_remarks' => $event->has_remarks,
       'has_meal_options' => $event->has_meal_options,
       'meal_options' => [
-        'Fleisch' => $event->has_meal_option_meat ? __('Fleisch') : null,
-        'Vegetarisch' => $event->has_meal_option_vegetarian ? __('Vegetarisch') : null,
+        'Fleisch' => $event->has_meal_option_meat ? 'Fleisch' : null,
+        'Vegetarisch' => $event->has_meal_option_vegetarian ? 'Vegetarisch' : null,
       ],
       'has_button_additional_individuals' => $event->has_button_additional_individuals,
       'has_field_additional_individual_email' => $event->has_field_additional_individual_email,
       'has_field_additional_individual_name' => $event->has_field_additional_individual_name,
-      'has_field_additional_individual_firstname' => $event->has_field_additional_individual_firstname,
     ]);
   }
 
   public function register(Request $request)
   {
     $event = Entry::find($request->input('event_id'));
-
     $validationResult = $this->validateRequest($request, $event);
-    if ($validationResult !== TRUE) {
-      return $validationResult;
-    }
-    $event = Entry::find($request->input('event_id'));
-
-    $validationResult = $this->validateRequest($request, $event);
-    if ($validationResult !== TRUE) {
+    if ($validationResult !== TRUE)
+    {
       return $validationResult;
     }
 
@@ -61,8 +54,7 @@ class EventController extends Controller
       'email' => $request->input('email') ?? null,
       'phone' => $request->input('phone') ?? null,
       'remarks' => $request->input('remarks') ?? null,
-      'wants_meal_options' => $request->input('wants_meal_options'),
-      'meal_options' => $request->input('wants_meal_options') != "false" && $request->input('meal_options') ? $request->input('meal_options') : null,
+      'meal_options' => $request->input('wants_meal_options') != "false" && $request->input('meal_options') ? $request->input('meal_options') : 'ohne Essen',
     ];
 
     // handle additional individuals, build a string out of:
@@ -72,8 +64,8 @@ class EventController extends Controller
     {
       // create an array with salutation, email, name, firstname and meal_options
       $additional_individual_data = [
+        'name' => $additional_individual['name'],
         'email' => $additional_individual['email'] ?? null,
-        'name' => $additional_individual['firstname'] . ' ' . $additional_individual['name'],
         'meal_options' => $additional_individual['meal_options'] ?? 'ohne Essen',
       ];
 
