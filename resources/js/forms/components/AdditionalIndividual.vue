@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-15 lg:space-y-20">
+  <div>
     <form-group v-if="hasFirstname">
       <form-label id="firstname" :label="'Vorname'" :required="requiresFirstname" />
       <form-text-field 

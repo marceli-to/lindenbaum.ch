@@ -9,7 +9,7 @@
       Bitte überprüfen Sie die eingegebenen Daten.
     </error-alert>
   </template>
-  <form @submit.prevent="submitForm" v-if="isLoaded" class="space-y-25 lg:space-y-35">
+  <form @submit.prevent="submitForm" v-if="isLoaded">
     <form-group v-if="hasFirstname">
       <form-label id="firstname" :label="'Vorname'" :required="requiresFirstname" />
       <form-text-field 
@@ -102,7 +102,7 @@
             <a 
               href="javascript:;" 
               @click.prevent="removeAdditionalIndividual(index)" 
-              class="mt-10 xl:mt-20 inline-block text-xs xl:text-sm group">
+              class="inline-block text-xs xl:text-sm group">
               <span class="underline underline-offset-4 decoration-1 group-hover:no-underline">Person Entfernen</span>
             </a>
           </div>
@@ -260,7 +260,6 @@ async function submitForm() {
   try {
     const response = await axios.post('/api/event/register', {
       ...form.value,
-      locale: locale.value,
     });
     handleSuccess();
   } catch (error) {
@@ -343,7 +342,7 @@ function handleError(error) {
       });
     }
 
-
+    // scroll to top of the form
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
