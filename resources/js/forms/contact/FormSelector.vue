@@ -14,11 +14,13 @@
       <form-label id="form-selector" label="Dienstleistung" required />
       <select id="form-selector" v-model="service">
         <option value="Allgemein" selected>Allgemein</option>
-        <option value="Wohnen">Wohnen</option>
-        <option value="Wäscherei">Wäscherei</option>
-        <option value="Raumvermietung">Raumvermietung und Catering</option>
+        <option value="Ausbildung">Anfrage Ausbildung</option>
+        <option value="Betriebsunterhalt">Betriebsunterhalt</option>
         <option value="Chinderhuus">Chinderhuus Anmeldung</option>
         <option value="Genossenschaft">Genossenschaft</option>
+        <option value="Raumvermietung">Raumvermietung und Catering</option>
+        <option value="Wäscherei">Wäscherei</option>
+        <option value="Wohnen">Wohnen</option>
       </select>
     </form-group>
     <component 
@@ -50,8 +52,9 @@ const service = ref('Allgemein');
 const currentFormComponent = computed(() => {
   switch (service.value) {
     case 'Wohnen':
-      return GeneralRequestForm;
+    case 'Ausbildung':
     case 'Wäscherei':
+    case 'Betriebsunterhalt':
       return GeneralRequestForm;
     case 'Raumvermietung':
       return RoomRequestForm;
@@ -69,7 +72,7 @@ const formError = ref(false);
 
 const updateFormFromHash = () => {
   const hash = window.location.hash.slice(1);
-  if (['Allgemein', 'Wohnen', 'Wäscherei', 'Raumvermietung', 'Chinderhuus', 'Cooperative'].includes(hash)) {
+  if (['Allgemein', 'Ausbildung', 'Betriebsunterhalt', 'Wohnen', 'Wäscherei', 'Raumvermietung', 'Chinderhuus', 'Cooperative'].includes(hash)) {
     service.value = hash;
   }
 };
