@@ -106,7 +106,7 @@ const form = ref({
   email: '',
   phone: '',
   message: '',
-  room: 'room1',
+  room: 'Chämisaal',
   date: '',
   toc: false,
 });
@@ -123,9 +123,10 @@ const errors = ref({
 });
 
 const rooms = ref([
-  { value: 'room1', label: 'Raum 1' },
-  { value: 'room2', label: 'Raum 2' },
-  { value: 'room3', label: 'Raum 3' },
+  { value: 'Chämisaal', label: 'Chämisaal' },
+  { value: 'Lindensaal', label: 'Lindensaal' },
+  { value: 'Schulküche/Schulungsraum', label: 'Schulküche/Schulungsraum' },
+  { value: 'Sitzungszimmer', label: 'Sitzungszimmer' },
 ]);
 
 const minDate = ref(new Date().toISOString().split('T')[0]);
