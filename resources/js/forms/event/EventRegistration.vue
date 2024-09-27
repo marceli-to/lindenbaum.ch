@@ -120,6 +120,43 @@
       </div>
     </template>
 
+    <template v-if="hasButtonChildren">
+      <form-group>
+        <label class="block font-bold mb-10 xl:mb-15">Kinder</label>
+        <div class="flex gap-x-10 lg:gap-x-20 items-center mt-3 lg:mt-10 relative">
+          <form-radio-field 
+            v-model="form.has_field_children" 
+            :id="'has_field_children_yes'"
+            :name="'has_field_children'"
+            :error="errors.has_field_children"
+            @update:error="errors.has_field_children = $event"
+            @update:modelValue="form.has_field_children = $event"
+            :value="'true'"
+            :label="'Ja'"
+          />
+          <form-radio-field 
+            v-model="form.has_field_children" 
+            :id="'has_field_children_no'"
+            :name="'has_field_children'"
+            :error="errors.has_field_children"
+            @update:error="errors.has_field_children = $event"
+            @update:modelValue="form.has_field_children = $event"
+            :value="'false'"
+            :label="'Nein'"
+          />
+          <Error :error="errors.has_field_children" />
+        </div>
+      </form-group>
+      <form-group v-if="form.has_field_children == 'true'">
+        <form-label id="children" :label="'Anzahl Kinder'" :required="true" />
+        <form-text-field 
+          v-model="form.children" 
+          :error="errors.children"
+          @update:error="errors.children = $event"
+        />
+      </form-group>
+    </template>
+
     <form-group v-if="hasRemarks">
       <form-label id="remarks" :label="'Bemerkungen'" />
       <form-textarea-field 
@@ -194,6 +231,8 @@ const hasFieldAdditionalIndividualEmail = ref(false);
 const hasFieldAdditionalIndividualName = ref(false);
 const hasFieldAdditionalIndividualFirstname = ref(false);
 const hasFieldAdditionalIndividualCostCenter = ref(false);
+const hasButtonChildren = ref(false);
+const hasFieldChildren = ref(false);
 
 const form = ref({
   event_id: props.eventId,
@@ -205,6 +244,7 @@ const form = ref({
   wants_meal_options: null,
   meal_options: null,
   additional_individuals: [],
+  children: null,
 });
 
 const errors = ref({
@@ -214,6 +254,7 @@ const errors = ref({
     phone: '',
     meal_options: '',
     additional_individuals: [],
+    children: '',
   }
 );
 
@@ -231,6 +272,8 @@ onMounted(async () => {
     requiresPhone.value = response.data.requires_phone;
     hasRemarks.value = response.data.has_remarks;
     hasMealOptions.value = response.data.has_meal_options;
+    hasButtonChildren.value = response.data.has_button_children;
+
     if (hasMealOptions.value) {   
       
       if (response.data.meal_options) {
@@ -256,6 +299,7 @@ async function submitForm() {
   isSubmitting.value = true;
   formSuccess.value = false;
   formError.value = false;
+
   try {
     const response = await axios.post('/api/event/register', {
       ...form.value,
@@ -299,6 +343,7 @@ function handleSuccess() {
     phone: null,
     meal_options: null,
     additional_individuals: [],
+    children: null,
   };
 
   // reset additional_individuals
@@ -312,6 +357,7 @@ function handleSuccess() {
     phone: '',
     meal_options: '',
     additional_individuals: [],
+    children: '',
   };
   
   isSubmitting.value = false;

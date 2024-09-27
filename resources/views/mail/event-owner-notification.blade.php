@@ -43,6 +43,12 @@
       {{ $data['message'] }}
     </div>
   @endif
+  @if (isset($data['children']) && $data['children'] > 0)
+    <div class="text-base pt-xlarge pb-large">
+      <strong>Kinder</strong><br>
+      {{ $data['children'] }}
+    </div>
+  @endif
   @if (isset($data['additional_individuals']) && count($data['additional_individuals']) > 0)
     <div class="text-base pt-xlarge pb-large">
       <strong>Begleitpersonen</strong><br>

@@ -267,6 +267,21 @@ tabs:
               if:
                 has_form: 'equals true'
                 has_button_additional_individuals: 'equals true'
+          -
+            handle: children
+            field:
+              type: section
+              display: Kinder
+              instructions: 'Hinzufügen von Kindern ermöglichen'
+              if:
+                has_form: 'equals true'
+          -
+            handle: has_button_children
+            field:
+              type: toggle
+              display: Aktivieren
+              if:
+                has_form: 'equals true'
   sidebar:
     display: Sidebar
     sections:

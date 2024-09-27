@@ -32,6 +32,7 @@ class EventController extends Controller
       'has_button_additional_individuals' => $event->has_button_additional_individuals,
       'has_field_additional_individual_email' => $event->has_field_additional_individual_email,
       'has_field_additional_individual_name' => $event->has_field_additional_individual_name,
+      'has_button_children' => $event->has_button_children,
     ]);
   }
 
@@ -69,9 +70,9 @@ class EventController extends Controller
         ->slug($event->title . '-' . uniqid())
         ->data([
           'title' => $event->title,
-          'firstname' => '–',
-          'name' => $individual['name'],
-          'email' => $individual['email'] ?? '–',
+          'firstname' => $individual['name'],
+          'name' => '–',
+          'email' => $individual['email'] ?? $request->input('email'),
           'meal_options' => $event->has_meal_options ? $individual['meal_options'] : null,
           'remarks' => 'Begleitperson von ' . $request->input('firstname') . ' ' . $request->input('name'),
         ])
@@ -82,6 +83,28 @@ class EventController extends Controller
         'email' => $individual['email'] ?? null,
         'meal_options' => $event->has_meal_options && empty($individual['meal_options']) ? 'ohne Essen'  : $individual['meal_options'],
       ];
+    }
+
+    // handle children
+    if ($event->has_button_children) {
+      $data['children'] = $request->input('children');
+
+      // Create an entry for each child
+      // $request->input('children') is a number, so turn it into a for loop
+      for ($i = 0; $i < $request->input('children'); $i++)
+      {
+        Entry::make()
+          ->collection('requests_events')
+          ->slug($event->title . '-' . uniqid())
+          ->data([
+            'title' => $event->title,
+            'firstname' => 'Kind ' .  $i + 1,
+            'name' => '–',
+            'email' => $request->input('email'),
+            'remarks' => 'Kind von ' . $request->input('firstname') . ' ' . $request->input('name'),
+          ])
+          ->save();
+      }
     }
 
     // Send confirmation email to user
@@ -174,6 +197,11 @@ class EventController extends Controller
       $validationRules['additional_individuals.*.meal_options'] = 'required_if:additional_individuals.*.wants_meal_options,true';
     }
 
+    if ($event->has_button_children) {
+      $validationRules['has_field_children'] = 'required';
+      $validationRules['children'] = 'required_if:has_field_children,true';
+    }
+
     $validationRules['toc'] = 'accepted';
 
     // Set validation messages
@@ -192,6 +220,8 @@ class EventController extends Controller
       'additional_individuals.*.email.regex' => __('E-Mail-Adresse muss gültig sein'),
       'additional_individuals.*.meal_options.required' => __('Essen ist erforderlich'),
       'additional_individuals.*.wants_meal_options.required' => __('Angabe ist erforderlich'),
+      'has_field_children.required' => __('Angabe ist erforderlich'),
+      'children.required_if' => __('Anzahl Kinder ist erforderlich'),
       'toc.accepted' => __('Sie müssen die Teilnahme- und Annullationsbedingungen sowie die Datenschutzbestimmungen akzeptieren'),
     ];
     
