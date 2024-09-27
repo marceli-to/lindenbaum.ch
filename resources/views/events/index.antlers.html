@@ -15,7 +15,7 @@
 {{ /page_elements }}
 
 {{ partial:layout/inner has_reveal="true" }}
-  {{ collection from="events" as="events" sort="event_date:desc" event_date:is_after="now" }}
+  {{ collection from="events" as="events" sort="event_date:asc" event_date:is_after="now" }}
     {{ if events }}
       <h2>Kommende Aktivitäten</h2>
       <div class="sm:grid sm:grid-cols-12 sm:gap-x-20 sm:gap-y-30 lg:gap-y-60">
