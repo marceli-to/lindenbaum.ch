@@ -199,6 +199,10 @@ table.header__content {
   line-height: 1 !important;
 }
 
+.pb-small {
+  padding-bottom: 5px;
+}
+
 .pb-base {
   padding-bottom: 15px;
 }

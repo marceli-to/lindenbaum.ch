@@ -44,13 +44,13 @@
     </div>
   @endif
   @if (isset($data['children']) && $data['children'] > 0)
-    <div class="text-base pt-xlarge pb-large">
+    <div class="text-base pb-large">
       <strong>Kinder</strong><br>
       {{ $data['children'] }}
     </div>
   @endif
   @if (isset($data['additional_individuals']) && count($data['additional_individuals']) > 0)
-    <div class="text-base pt-xlarge pb-large">
+    <div class="text-base pb-small">
       <strong>Begleitpersonen</strong><br>
     </div>
     @foreach ($data['additional_individuals'] as $individual)
