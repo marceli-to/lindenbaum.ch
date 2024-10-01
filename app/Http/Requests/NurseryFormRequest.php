@@ -32,6 +32,7 @@ class NurseryFormRequest extends FormRequest
       'citizenship' => 'required|string|max:255',
       'care_days' => 'required|array',
       'care_days.*' => 'required|string|max:255',
+      'care_days_flexible' => 'nullable',
       'justification_urgency' => 'required|string',
       'previous_care_type' => 'required|string',
       'date_of_entry' => 'required|date',
