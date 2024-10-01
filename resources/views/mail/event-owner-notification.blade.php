@@ -40,7 +40,7 @@
   @if ($data['remarks'])
     <div class="text-base pb-base">
       <strong>Bemerkungen</strong><br>
-      {{ $data['message'] }}
+      {{ $data['remarks'] }}
     </div>
   @endif
   @if (isset($data['children']) && $data['children'] > 0)
