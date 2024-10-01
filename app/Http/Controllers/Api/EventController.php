@@ -108,12 +108,10 @@ class EventController extends Controller
     }
 
     // Send confirmation email to user
-    Notification::route('mail', $request->input('email'))
-      ->notify(new UserConfirmation($event, $data));
+    Notification::route('mail', $request->input('email'))->notify(new UserConfirmation($event, $data));
 
     // Send notification email to owner
-    Notification::route('mail', env('MAIL_TO'))
-      ->notify(new OwnerNotification($event, $data));
+    Notification::route('mail', env('MAIL_TO'))->notify(new OwnerNotification($event, $data));
 
     return response()->json(['message' => 'Store successful']);
   }

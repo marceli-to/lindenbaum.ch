@@ -36,7 +36,7 @@
       />
     </form-group>
     <form-group>
-      <form-label id="street" label="Straße" required />
+      <form-label id="street" label="Strasse" required />
       <form-text-field 
         v-model="form.street" 
         :error="errors.street"

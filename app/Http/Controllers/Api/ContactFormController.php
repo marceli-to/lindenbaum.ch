@@ -8,9 +8,12 @@ use App\Http\Requests\CooperativeFormRequest;
 use Statamic\Facades\Entry;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\Contact\GeneralUserEmail;
+use App\Notifications\Contact\GeneralOwnerEmail;
 use App\Notifications\Contact\RoomUserEmail;
 use App\Notifications\Contact\NurseryUserEmail;
 use App\Notifications\Contact\CooperativeUserEmail;
+use App\Notifications\Contact\CooperativeOwnerEmail;
+
 use Carbon\Carbon;
 
 class ContactFormController extends Controller
@@ -33,6 +36,11 @@ class ContactFormController extends Controller
       ->save();
         
       Notification::route('mail', $request->input('email'))->notify(new GeneralUserEmail(
+        $request->input('service'),
+        $request->validated()
+      ));
+
+      Notification::route('mail', env('MAIL_TO'))->notify(new GeneralOwnerEmail(
         $request->input('service'),
         $request->validated()
       ));
@@ -121,8 +129,12 @@ class ContactFormController extends Controller
       $entry->date_of_birth = $date;
       $entry->save();
 
-
       Notification::route('mail', $request->input('email'))->notify(new CooperativeUserEmail(
+        $request->input('service'),
+        $request->validated()
+      ));
+
+      Notification::route('mail', env('MAIL_TO'))->notify(new CooperativeOwnerEmail(
         $request->input('service'),
         $request->validated()
       ));
