@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Notification;
 use App\Notifications\Contact\GeneralUserEmail;
 use App\Notifications\Contact\GeneralOwnerEmail;
 use App\Notifications\Contact\RoomUserEmail;
+use App\Notifications\Contact\RoomOwnerEmail;
 use App\Notifications\Contact\NurseryUserEmail;
+use App\Notifications\Contact\NurseryOwnerEmail;
 use App\Notifications\Contact\CooperativeUserEmail;
 use App\Notifications\Contact\CooperativeOwnerEmail;
 
@@ -73,6 +75,11 @@ class ContactFormController extends Controller
         $request->validated()
       ));
 
+      Notification::route('mail', env('MAIL_TO'))->notify(new RoomOwnerEmail(
+        $request->input('service'),
+        $request->validated()
+      ));
+
     return response()->json(['message' => 'Store successful']);
   }
 
@@ -102,6 +109,11 @@ class ContactFormController extends Controller
       $entry->save();
 
       Notification::route('mail', $request->input('email'))->notify(new NurseryUserEmail(
+        $request->input('service'),
+        $request->validated()
+      ));
+
+      Notification::route('mail', env('MAIL_TO'))->notify(new NurseryOwnerEmail(
         $request->input('service'),
         $request->validated()
       ));

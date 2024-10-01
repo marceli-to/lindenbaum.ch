@@ -1,6 +1,6 @@
 <x-mail::message>
   <div class="text-base pb-base">
-    Guten Tag<br><br>Vielen Dank für Ihre Anfrage. Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen.
+    Anfrage Kontaktformular {{ $subject }}
   </div>
   <br>
   <div class="text-base pb-base">

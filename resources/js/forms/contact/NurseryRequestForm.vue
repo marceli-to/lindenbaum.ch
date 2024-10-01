@@ -9,7 +9,7 @@
       />
     </form-group>
     <form-group>
-      <form-label id="street" label="Strasse" required />
+      <form-label id="street" label="Strasse/Nr." required />
       <form-text-field 
         v-model="form.street" 
         :error="errors.street"
@@ -17,7 +17,7 @@
       />
     </form-group>
     <form-group>
-      <form-label id="location" label="Ort" required />
+      <form-label id="location" label="PLZ/Ort" required />
       <form-text-field 
         v-model="form.location" 
         :error="errors.location"

@@ -24,6 +24,14 @@
     {{ date('d.m.Y', strtotime($data['date_of_birth'])) }}
   </div>
   <div class="text-base pb-base">
+    <strong>Strasse/Nr.</strong><br>
+    {{ $data['street'] }}
+  </div>
+  <div class="text-base pb-base">
+    <strong>PLZ/Ort</strong><br>
+    {{ $data['location'] }}
+  </div>
+  <div class="text-base pb-base">
     <strong>E-Mail</strong><br>
     {{ $data['email'] }}
   </div>
