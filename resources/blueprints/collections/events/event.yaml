@@ -109,6 +109,30 @@ tabs:
               if:
                 has_form: 'equals true'
           -
+            handle: recipients
+            field:
+              type: replicator
+              display: Empfänger
+              instructions: 'E-Mail Empfänger für Anmeldungen hinzufügen. Standardässig werden die E-Mails an info@lindenbaum.ch versendet.'
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    recipient:
+                      display: Empfänger
+                      instructions: 'E-Mail Empfänger hinfzufügen.'
+                      icon: mail-sign-at
+                      fields:
+                        -
+                          handle: email_address
+                          field:
+                            input_type: email
+                            type: text
+                            display: E-Mail-Adresse
+                            validate:
+                              - required
+                              - email
+          -
             handle: contact_information
             field:
               type: section

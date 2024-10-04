@@ -107,11 +107,21 @@ class EventController extends Controller
       }
     }
 
+    if ($event->recipients) {
+      foreach ($event->recipients as $recipient)
+      {
+        // Send notification email to recipients
+        Notification::route('mail', $recipient->email_address)->notify(new OwnerNotification($event, $data));
+      }
+    } 
+    else
+    {
+      // Send notification email to default owner
+      Notification::route('mail', env('MAIL_TO'))->notify(new OwnerNotification($event, $data));
+    }
+
     // Send confirmation email to user
     Notification::route('mail', $request->input('email'))->notify(new UserConfirmation($event, $data));
-
-    // Send notification email to owner
-    Notification::route('mail', env('MAIL_TO'))->notify(new OwnerNotification($event, $data));
 
     return response()->json(['message' => 'Store successful']);
   }
