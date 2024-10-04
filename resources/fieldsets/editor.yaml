@@ -38,6 +38,13 @@ fields:
               fields:
                 -
                   import: button
+            button_menue:
+              display: 'Button Wochenmenü'
+              instructions: 'Button für Wochenmenü hinzufügen.'
+              icon: link
+              fields:
+                -
+                  import: button_menue
             contact_box:
               display: Kontaktbox
               icon: phone-contact-phonebook
@@ -76,6 +83,13 @@ fields:
               fields:
                 -
                   import: button
+            button_menue:
+              display: 'Button Wochenmenü'
+              instructions: 'Button für Wochenmenü hinzufügen.'
+              icon: link
+              fields:
+                -
+                  import: button_menue
             contact_box:
               display: Kontaktbox
               icon: phone-contact-phonebook
@@ -114,6 +128,13 @@ fields:
               fields:
                 -
                   import: button
+            button_menue:
+              display: 'Button Wochenmenü'
+              instructions: 'Button für Wochenmenü hinzufügen.'
+              icon: link
+              fields:
+                -
+                  import: button_menue
             contact_box:
               display: Kontaktbox
               icon: phone-contact-phonebook

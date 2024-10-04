@@ -3,6 +3,8 @@
     {{ editor_left }}
       {{ if type == 'button' }}
         {{ partial:components/buttons/primary type="outline" }}
+      {{ elseif type == 'button_menue' && menue:file }}
+        {{ partial:components/buttons/primary type="outline" target="_blank" button_link="{{ menue:file }}" }}
       {{ elseif type == 'contact_box' }}
         {{ partial:components/misc/contact-box class="max-w-sm" }}
       {{ else }}
@@ -14,6 +16,8 @@
     {{ editor_right }}
       {{ if type == 'button' }}
         {{ partial:components/buttons/primary type="outline" }}
+      {{ elseif type == 'button_menue' && menue:file }}
+        {{ partial:components/buttons/primary type="outline" target="_blank" button_link="{{ menue:file }}" }}
       {{ elseif type == 'contact_box' }}
         {{ partial:components/misc/contact-box class="max-w-sm" }}
       {{ else }}
