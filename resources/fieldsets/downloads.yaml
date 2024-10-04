@@ -45,3 +45,10 @@ fields:
                                 field:
                                   type: text
                                   display: Titel
+                          button_menue:
+                            display: 'Button Wochenmenü'
+                            instructions: 'Button für Wochenmenü hinzufügen.'
+                            icon: link
+                            fields:
+                              -
+                                import: button_menue

@@ -5,12 +5,21 @@
         <h2>{{ title }}</h2>
         {{ files }}
         <div>
-        {{ partial:components/buttons/primary 
-            type="outline" 
-            :button_link="file" 
-            :button_text="title"
-            target="_blank"
-            class="mb-12" }}
+        {{ if type == 'download' }}
+          {{ partial:components/buttons/primary 
+              type="outline" 
+              :button_link="file" 
+              :button_text="title"
+              target="_blank"
+              class="mb-12" }}
+        {{ elseif type == 'button_menue' && menue:file }}
+          {{ partial:components/buttons/primary 
+              type="outline" 
+              :button_link="menue:file" 
+              :button_text="button_text"
+              target="_blank"
+              class="mb-12" }}
+        {{ /if }}
         </div>
         {{ /files }}
       </article>
