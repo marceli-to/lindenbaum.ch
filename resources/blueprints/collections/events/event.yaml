@@ -312,6 +312,11 @@ tabs:
       -
         fields:
           -
+            handle: is_internal
+            field:
+              type: toggle
+              display: 'Intern?'
+          -
             handle: slug
             field:
               type: slug
